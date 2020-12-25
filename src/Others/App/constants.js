@@ -17,13 +17,13 @@ export const GOOGLE_CLIENT_ID =
 
 export const API_BASE =
   process.env.NODE_ENV === 'production'
-    ? 'http://localhost:5000/api/'
-    : 'http://localhost:5000/api/';
+    ? 'https://ajebodatabaseblog2.herokuapp.com/api/'
+    : 'https://ajebodatabaseblog2.herokuapp.com/api/';
 
 export const IMAGE_BASE =
   process.env.NODE_ENV === 'production'
-    ? 'http://localhost:5000/'
-    : 'http://localhost:5000/';
+    ? 'https://ajebodatabaseblog2.herokuapp.com/api/'
+    : 'https://ajebodatabaseblog2.herokuapp.com/api/';
 
 export const DATE_FORMAT = 'll';
 
