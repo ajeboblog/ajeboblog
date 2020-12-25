@@ -13,7 +13,7 @@ const Css = withSass({
 
 const  nextConfig = {
     env: {
-        REACT_APP_API_URL: 'https://ajebodatabaseblog2.herokuapp.com/api',
+        REACT_APP_API_URL: 'https://joydimba.herokuapp.com/api',
        
     },
    withCss,

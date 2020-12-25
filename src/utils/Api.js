@@ -46,7 +46,7 @@ class Api {
 
   static dataLoader1(apiUri, onSuccess, onError, data, token, metaData) {
     return function* commonApiSetup() {
-      const baseUrl = 'https://ajebodatabaseblog2.herokuapp.com/api/';
+      const baseUrl = 'https://joydimba.herokuapp.com/api/';
       const requestURL = `${baseUrl}${apiUri}`;
       try {
         const options = {
