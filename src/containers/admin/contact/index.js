@@ -124,7 +124,7 @@ class ContactUs extends React.Component {
               <p className="mb-4"><a href="/">+234 905 550 5775</a></p>
 
               <p className="mb-0 font-weight-bold">Email Address</p>
-              <p className="mb-0"><a href="/">info@ajebonews.com</a></p>
+              <p className="mb-0"><a href="/">ajeboblog@gmail.com</a></p>
 
             </div>
 
