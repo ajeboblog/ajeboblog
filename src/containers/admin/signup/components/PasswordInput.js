@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Proptypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -33,7 +34,13 @@ const PasswordInput = props => {
           placeholder="Enter password"
         />
 					<span className="focus-input100"></span>
-         
+          <span
+          className={classes.EyeIcon}
+          aria-label="Toggle password visibility"
+          onClick={handleTogglePassword}
+        >
+          {isSecure ? <Visibility /> : <VisibilityOff />}
+        </span>
         {error && <div id="component-error-text">{error}</div>}
 				</div>
 

@@ -19,7 +19,7 @@ const EmailInput = props => {
           value={email}
           className="input100"
           type="text"
-          autoFocus  placeholder="Enter email"
+          autoFocus  placeholder="Enter mobile or email"
         />
 					<span className="focus-input100"></span>
           {error && <div id="component-error-text">{error}</div>}

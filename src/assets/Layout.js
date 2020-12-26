@@ -18,9 +18,7 @@ const Layout = (props) => (
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
         <link rel="manifest" href="/manifest.json"/>
         <link rel="manifest" href="/site.webmanifest"/>
-        <script src="/__/firebase/8.2.1/firebase-app.js"></script>
-        <script src="/__/firebase/8.2.1/firebase-analytics.js"></script>
-        <script src="/__/firebase/init.js"></script>
+       
         </Head>
        
         {props.children}

@@ -426,7 +426,7 @@ class AddEdit extends React.PureComponent {
                 }
   
   
-    return !this.props.one ? (
+    return !this.props.one.title ? (
     <>
     <Head>
       <div>Post not Found</div>
