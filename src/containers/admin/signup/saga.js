@@ -41,7 +41,7 @@ export function* redirectOnSuccess(redirect) {
     yield put(push(redirect));
   } else {
     // do something
-    yield put(push('/verifymail'));
+    yield put(push('/signin'));
   }
 }
 

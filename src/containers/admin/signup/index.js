@@ -52,7 +52,7 @@ const SignupUserPage = ({
 
 				<div className="container-login100-form-btn">
 					<button className="login100-form-btn">
-					{loading ?  <div className="btn_loading"><div></div><div></div><div></div><div></div><span className="ml-2">Sing Up</span></div> : 'Sign Up'}
+					Register
 					</button>
 				</div>
 
