@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import dynamic from 'next/dynamic'
+//import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
