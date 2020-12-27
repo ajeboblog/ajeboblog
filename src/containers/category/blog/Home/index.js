@@ -40,6 +40,7 @@ export class Home extends React.Component {
      
       <>
 
+
 <Head>
       <title> Ajeboblog | Home</title>
       <meta
@@ -72,31 +73,27 @@ export class Home extends React.Component {
 
     </Head>
 
-
-
-     <div>
-
-
+    <div>
 
        <Header/>
-   
-   <div className="site-section">
-   <div className="container">
-   <div className="row">
-     <div className="col-md-12 col-lg-8 ">
-       <div className="row">
-     {this.props.blogs
+
+       <section className="site-section py-lg">
+                <div className="container">
+                 <div className="row align-items-stretch retro-layout-2">
+                 {this.props.blogs
                  ? this.props.blogs.slice(0, 3).map(post => {
-                   return(
-                  <div className="col-md-12 col-lg-4" >
-                      <a href={`/${post.slug_url}` }
-                    className="h-entry mb-30 v-height gradient" style={{backgroundImage: `url(${post.thumbnail})`}} >
-                      <div className="text">
-                        <h4>{post.title.substring(0, 70) + '...'}</h4>  
-                        <span className="date">{moment(post.published_on).format('MMM Do YYYY')}</span>
-                      </div>
-                      </a>
-                  </div>
+                return(
+                  <div className="col-md-4" >
+            
+            <a href={`/${post.slug_url}`} 
+           className="h-entry mb-30 v-height gradient" style={{backgroundImage: `url(${post.thumbnail})`}} >
+            <div className="text">
+              <h2>{post.title.substring(0, 70) + '...'}</h2>
+              <span className="date">{moment(post.published_on).format('MMM Do YYYY')}</span>
+            </div>
+          </a>
+        
+            </div>
            );
         }
         ): 
@@ -104,30 +101,44 @@ export class Home extends React.Component {
         
         </div>
         }
-     </div>
-     </div>
-<br/>
-   
-   <div className="col-md-6 col-lg-4 mb-5">
-     <br/>
-   <RecentBlog/> 
-   <Popular/>
-     </div>
-   
-   </div>
-   </div>
-   </div>
-   <Footer/>
-   </div>
-     
-      
+                 </div>
+
+
+                <div className="row blog-entries element-animate">
+                 <div className="col-md-12 col-lg-8 main-content">
+                   <div className="post-content-body">
+                      <div className="row mb-5 mt-5">
+                        <div className="col-md-6 mb-4">
+                         
+                        </div>
+                      </div>
+                    </div>
+                 </div>
+                    
+                    <div className="col-md-12 col-lg-4 sidebar">
+                      <div className="sidebar-box search-form-wrap">
+                        <form action="/" className="search-form">
+                          <div className="form-group">
+                            <span className="icon fa fa-search"></span>
+                            <input type="text" className="form-control" id="s" placeholder="Type a keyword and hit enter"/>
+                          </div>
+                        </form>
+                      </div>
+                     <RecentBlog/>
+                    <Popular/>
+                     </div>
+                  </div>
+                </div>
+              </section> 
+
+       <Footer/>
+
+      </div>
+
    </>
-      
-     
       );
     }
   }
-  
   const mapStateToProps = createStructuredSelector({
     loading: makeSelectRecentBlogsIsLoading(),
     blogs: makeSelectRecentBlogs(),
