@@ -18,14 +18,14 @@ function Recent(props) {
         <div className="post-entry-sidebar">
           <ul>
           {props.blogs.length >= 1
-                  ? props.blogs.slice(4, 11).map(popular => {
+                  ? props.blogs.slice(0, 6).map(popular => {
                       return (
             <li key ={popular._id} >
               <a href={`/${popular.slug_url}`}>
               <img
                 src={popular.thumbnail}
                 alt="ajeboblog"
-                className="img-fluid w-50 rounded-circle mb-4"
+                className="img-fluid rounded-circle mr-4"
               />
                 <div className="text">
                       <h4>{popular.title.substring(0, 70) + '...'}</h4>
