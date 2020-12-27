@@ -5,9 +5,10 @@ import FormControl from '@material-ui/core/FormControl';
 import { createStructuredSelector } from 'reselect';
 import { makeSelectErrors, makeSelectOne } from '../selectors';
 import * as mapDispatchToProps from '../actions';
+import { makeSelectUser } from "../../../../../../Others/App/selectors"
 
 const CategoryInput = props => {
-  const { one, setOneValue, error } = props;
+  const { one, setOneValue, error, user } = props;
 
   const slugify = text => {
     return text
@@ -25,7 +26,7 @@ const CategoryInput = props => {
   }
 
   const hasError = Boolean(error);
-
+  setOneValue({ key: 'name', value: user.name})
 
   return (
 <>
@@ -75,6 +76,7 @@ CategoryInput.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
   one: makeSelectOne(),
+  user: makeSelectUser(),
   errors: makeSelectErrors(),
 
 });
