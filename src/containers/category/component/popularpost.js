@@ -14,7 +14,7 @@ function Recent(props) {
     <>
      
  <div className="sidebar-box">
-        <h3 className="heading">Recent Articles</h3>
+        <h3 className="heading">Hot Topics</h3>
         <div className="post-entry-sidebar">
           <ul>
           {props.blogs.length >= 1
