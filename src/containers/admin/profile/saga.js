@@ -58,7 +58,7 @@ function* loadAll(action) {
 function* loadOne(action) {
   const token = yield select(makeSelectToken());
   const user = yield select(makeSelectUser());
-  console.log(user)
+  
   yield call(
     Api.get(
       `user/profile`,

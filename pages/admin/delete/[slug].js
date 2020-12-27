@@ -9,7 +9,7 @@ import {
 } from '../../../src/Others/App/selectors';
 
 const Delete = ({ token, post, logoutRequest, ...rest }) => {
-    console.log(`parameter:`, post)
+    
     if (token) return (
     <>
     <DeleteBlog post = {post} />

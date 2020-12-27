@@ -22,7 +22,7 @@ const TitleInput = props => {
     e.persist();
     setOneValue({ key: name, value: e.target.value });
   }
-  console.log(one)
+  
   const hasError = Boolean(error);
 
 

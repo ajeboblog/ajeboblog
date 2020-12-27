@@ -9,7 +9,7 @@ import {
 } from '../../../src/Others/App/selectors';
 
 const Edit = ({ token, post, logoutRequest, ...rest }) => {
-    console.log(`parameter:`, post)
+   
     if (token) return (
     <>
     <EditBlog post = {post} />

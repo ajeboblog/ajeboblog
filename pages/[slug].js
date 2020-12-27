@@ -19,21 +19,11 @@ class Post extends Component {
 
   render() {
     return (
-      
-!this.props.post ? (
-<>
-
-    <Head>
-        <title>Post Not Found</title>
-    </Head>
-    
-</>
-) : (
 <div>
 <Detail post = {this.props.post}/>
 </div>
       
-    ))
+    )
     }
 }
 

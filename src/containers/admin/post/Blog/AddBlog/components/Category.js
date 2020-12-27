@@ -9,7 +9,7 @@ import { makeSelectUser } from "../../../../../../Others/App/selectors"
 
 const CategoryInput = props => {
   const { one, setOneValue, error, user } = props;
-console.log(one)
+
   const slugify = text => {
     return text
       .toString()

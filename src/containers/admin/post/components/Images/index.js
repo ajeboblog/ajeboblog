@@ -7,10 +7,9 @@ import ImageUploading from 'react-images-uploading';
    
     const onChange = (imageList, addUpdateIndex) => {
       // data for submit
-      console.log(imageList, addUpdateIndex);
       setImages(imageList);
     };
-    //console.log(`Image Data_Url: `, images[0].data_url);
+    
   
     return (
         <>

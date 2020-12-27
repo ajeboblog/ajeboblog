@@ -8,7 +8,7 @@ import * as mapDispatchToProps from '../actions';
 
 const CategoryInput = props => {
   const { one, setOneValue, error } = props;
-console.log(one)
+
   const slugify = text => {
     return text
       .toString()
