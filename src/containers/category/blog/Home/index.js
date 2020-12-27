@@ -35,7 +35,7 @@ export class Home extends React.Component {
   }
 
   render() {
-    console.log(`Thumbnails`, post.thumbnail)
+   
     return (
      
       <>
@@ -93,6 +93,7 @@ export class Home extends React.Component {
                     className="h-entry mb-30 v-height gradient" style = {{backgroundImage: `url("${post.thumbnail}")`}} >
                       <div className="text">
                         <h4>{post.title.substring(0, 70) + '...'}</h4>
+                        <h4>{post.thumbnail}</h4>
                         <span className="date">{moment(post.published_on).format('MMM Do YYYY')}</span>
                       </div>
                       </a>
