@@ -35,6 +35,7 @@ export class Home extends React.Component {
   }
 
   render() {
+    console.log(`Thumbnails`, post.thumbnail)
     return (
      
       <>

@@ -25,7 +25,7 @@ function Recent(props) {
               <img
                 src={popular.thumbnail}
                 alt="ajeboblog"
-                className="img-fluid rounded-circle mr-4"
+                className="mr-4"
               />
                 <div className="text">
                       <h4>{popular.title.substring(0, 70) + '...'}</h4>
