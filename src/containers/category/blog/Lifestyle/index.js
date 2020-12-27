@@ -9,6 +9,7 @@ import {  makeSelectEntertainmentList,
 import * as mapDispatchToProps from './actions';
 import RenderBlogs from '../../component/render'
 import Header from '../../../../assets/Header'
+import Footer from '../../../../assets/Footer'
 import injectSaga from '../../../../utils/injectSaga';
 import injectReducer from '../../../../utils/injectReducer';
 import reducer from './reducer';
@@ -99,7 +100,7 @@ export class EntertainmentListList extends React.Component {
            </div>
        </div>
       </div>
-    
+    <Footer/>
    </>
       );
     }

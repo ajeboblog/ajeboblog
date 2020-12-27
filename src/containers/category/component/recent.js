@@ -14,8 +14,7 @@ import reducer from '../utils/reducer';
 import saga from '../utils/saga';
 import * as mapDispatchToProps from '../utils/actions';
 import moment from "moment";
-import Header from '../../../assets/Header'
-import Footer from '../../../assets/Footer'
+
 
 export class Home extends React.Component {
   static propTypes = {
@@ -46,7 +45,7 @@ export class Home extends React.Component {
                     <img
                       src={recent.thumbnail}
                       alt="ajeboblog"
-                      className="mr-4"
+                      className="img-fluid w-50 rounded-circle mr-4"
                     />
                       <div className="text">
                             <h4>{recent.title.substring(0, 70) + '...'}</h4>

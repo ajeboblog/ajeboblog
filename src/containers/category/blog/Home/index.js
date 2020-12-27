@@ -14,8 +14,9 @@ import reducer from '../../utils/reducer';
 import saga from '../../utils/saga';
 import * as mapDispatchToProps from '../../utils/actions';
 import moment from "moment";
-import RecentBlog from '../../component/recent'
-import Popular from '../../component/popularpost'
+import dynamic from 'next/dynamic';
+const RecentBlog = dynamic(() => import('../../component/recent2'));
+const Popular  = dynamic(()=> import('../../component/popularpost'));
 import Header from '../../../../assets/Header'
 import Footer from '../../../../assets/Footer'
 import Head from 'next/head'
@@ -88,10 +89,10 @@ export class Home extends React.Component {
                    return(
                   <div className="col-md-12 col-lg-4" >
                       <a href={`/${post.slug_url}` }
-                    className="h-entry mb-30 v-height gradient" style={{backgroundImage: `url(${post.thumbnail})`}} >
+                    className="h-entry mb-30 v-height gradient" style = {{backgroundImage: `url("${post.thumbnail}")`}} >
                       <div className="text">
-                        <h3>{post.title.substring(0, 70) + '...'}</h3>
-                        <span className="date">{moment(post.createdAt).format('MMM Do YYYY')}</span>
+                        <h4>{post.title.substring(0, 70) + '...'}</h4>
+                        <span className="date">{moment(post.published_on).format('MMM Do YYYY')}</span>
                       </div>
                       </a>
                   </div>

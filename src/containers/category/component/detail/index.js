@@ -426,14 +426,14 @@ class AddEdit extends React.PureComponent {
                 }
   
   
-    return !this.props.one.title ? (
-    <>
-    <Head>
-      <div>Post not Found</div>
-      </Head>
-    </>
-    ) :
-     (
+                return !this.props.one ? (
+                  <>
+                  <Head>
+                    
+                    </Head>
+                  </>
+                  ) :
+                   (
     <>
 
 
@@ -514,10 +514,9 @@ class AddEdit extends React.PureComponent {
               {this.renderBody1(firstline)}
               {this.renderBody2(secondline)}
               {this.renderImage1(one)}
-           
               {this.renderBody3(thirdline)}
-              {this.renderImage2(one)}
               {this.renderBody4(fourthline)}
+              {this.renderImage2(one)}
               {this.renderBody5(fifthline)}
               {this.renderBody6(sixthline)}
               {this.renderBody7(seventhline)}

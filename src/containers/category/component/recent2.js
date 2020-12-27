@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import { createStructuredSelector } from 'reselect';
 import {
-  makeSelectPopularPostLoading,
-  makeSelectPopularPost,
+  makeSelectRecentBlogsIsLoading,
+  makeSelectRecentBlogs,
 } from '../utils/selectors';
 
 function Recent(props) {
@@ -18,19 +18,19 @@ function Recent(props) {
         <div className="post-entry-sidebar">
           <ul>
           {props.blogs.length >= 1
-                  ? props.blogs.slice(4, 11).map(popular => {
+                  ? props.blogs.slice(4, 11).map(recent => {
                       return (
-            <li key ={popular._id} >
-              <a href={`/${popular.slug_url}`}>
+            <li key ={recent._id} >
+              <a href={`/${recent.slug_url}`}>
               <img
-                src={popular.thumbnail}
+                src={recent.thumbnail}
                 alt="ajeboblog"
                 className="img-fluid w-50 rounded-circle mr-4"
               />
                 <div className="text">
-                      <h4>{popular.title.substring(0, 70) + '...'}</h4>
+                      <h4>{recent.title.substring(0, 70) + '...'}</h4>
                   <div className="post-meta">
-                    <span className="mr-2">{moment(popular.published_on).format('MMM Do YYYY')}</span>
+                    <span className="mr-2">{moment(recent.published_on).format('MMM Do YYYY')}</span>
                   </div>
                 </div>
               </a>
@@ -53,8 +53,8 @@ Recent.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  loading: makeSelectPopularPostLoading(),
-  blogs: makeSelectPopularPost()
+  loading: makeSelectRecentBlogsIsLoading(),
+  blogs: makeSelectRecentBlogs()
 });
 
 export default connect(mapStateToProps)(Recent);
