@@ -90,10 +90,9 @@ export class Home extends React.Component {
                    return(
                   <div className="col-md-12 col-lg-4" >
                       <a href={`/${post.slug_url}` }
-                    className="h-entry mb-30 v-height gradient" style = {{backgroundImage: `url("${post.thumbnail}")`}} >
+                    className="h-entry mb-30 v-height gradient" style={{backgroundImage: `url(${post.thumbnail})`}} >
                       <div className="text">
-                        <h4>{post.title.substring(0, 70) + '...'}</h4>
-                        <h4>{post.thumbnail}</h4>
+                        <h4>{post.title.substring(0, 70) + '...'}</h4>  
                         <span className="date">{moment(post.published_on).format('MMM Do YYYY')}</span>
                       </div>
                       </a>
