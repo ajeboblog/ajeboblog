@@ -494,7 +494,7 @@ class AddEdit extends React.PureComponent {
                 <h1 className="mb-4">{one.title}</h1>
                 <div className="post-meta align-items-center text-center">
                   <figure className="author-figure mb-0 mr-3 d-inline-block"><img src={one.avatar} alt={one.author} className="img-fluid"/></figure>
-                  <span className="d-inline-block mt-1">By {one.author}</span>
+                  <span className="d-inline-block mt-1">By {one.name}</span>
                   <span>&nbsp;-&nbsp; {moment(one.published_on).format('MMM Do YYYY')}</span>
                 </div>
               </div>
