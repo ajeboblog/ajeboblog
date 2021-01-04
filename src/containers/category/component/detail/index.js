@@ -58,7 +58,10 @@ class AddEdit extends React.PureComponent {
     renderTwitter(one){
       if(one.twitter){
         return(
+          <>
           <Tweet tweetId={one.twitter} />
+          <br/>
+          </>
         )
       }
     }
@@ -84,12 +87,15 @@ class AddEdit extends React.PureComponent {
 
     renderImage1(one) {
       if (one.images[0]) {
-        return (
+        return (<>
           <img
             src={one.images[0].data_url}
             alt="ajeboblog"
             className="img-fluid"
+          
           />
+          <br/>
+          </>
         );
       }
       else{
@@ -104,13 +110,14 @@ class AddEdit extends React.PureComponent {
     
     renderImage2(one) {
       if (one.images[1]) {
-        return (
+        return (<>
           <img
             src={one.images[1].data_url}
             alt="ajeboblog"
             className="img-fluid2"
           />
-          
+          <br/>
+          </>
         );
       }
       else{
@@ -427,7 +434,7 @@ class AddEdit extends React.PureComponent {
                 }
   
   
-                return one.title.length < 0 ? (
+                return one.category.length < 0 ? (
                   <>
                   <Loader/>
                   </>

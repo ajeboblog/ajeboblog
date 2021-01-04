@@ -82,10 +82,15 @@ const Dashboard = props => {
           </>
         );
       })}
-      <div className="flex clearfix w-full pagination">
-        <div className="w-full md:w-1/4" />
-        <div className="w-3/4 flex mt-3 ">
-          {pagination.page !== 1 && (
+
+
+<div class="container">
+        <div class="card mt-3">
+          <div class="card-body p-3">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center pagination-one">
+
+              {pagination.page !== 1 && (
             <span>
               <button
                 className="border border-gray-500 hover:bg-gray-600 hover:border-gray-600 hover:text-white text-gray-800 font-bold w-10 h-10 rounded flex items-center justify-center"
@@ -96,16 +101,21 @@ const Dashboard = props => {
                   })
                 }
               >
-                <i className="material-icons">Back</i>
+               <svg width="16" height="16" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+</svg>
               </button>
             </span>
           )}
-          {pagenumber.length > 0 &&
+
+
+
+ {pagenumber.length > 0 &&
             pagenumber.map(each => (
               <span key={each}>
                 <button
                   id={each}
-                  className="border border-gray-500 hover:bg-gray-600 hover:border-gray-600 hover:text-white text-gray-800 font-bold w-10 h-10 rounded"
+                  className="page-item"
                   onClick={e => {
                     handlePagination({
                       ...pagination,
@@ -117,19 +127,31 @@ const Dashboard = props => {
                 </button>
               </span>
             ))}
-          <span>
+                
+
+                <span>
             <button
-              className="border border-gray-500 hover:bg-gray-600 hover:border-gray-600 hover:text-white text-gray-800 font-bold w-10 h-10 rounded flex items-center justify-center"
+              className="page-item"
               disabled={pagination.page === maxPage}
               onClick={() =>
                 handlePagination({ ...pagination, page: pagination.page + 1 })
               }
             >
-              <i className="material-icons">next</i>
+            <svg width="16" height="16" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+</svg>
             </button>
           </span>
+
+
+              </ul>
+            </nav>
           </div>
         </div>
+      </div>
+
+
+    
       
     </>
   ) : (

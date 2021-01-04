@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Loader from './Loader'
+
 
 const Layout = (props) => (
 	<div>
@@ -15,7 +15,7 @@ const Layout = (props) => (
         <link rel="manifest" href="/site.webmanifest"/>
        
         </Head>
-       <Loader/>
+     
         {props.children}
         
         <script src="js/serviceworker.js"></script>

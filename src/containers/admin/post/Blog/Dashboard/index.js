@@ -8,7 +8,6 @@ import {  makeSelectEntertainmentList,
   } from './selectors';
 import * as mapDispatchToProps from './actions';
 import RenderBlogs from '../../../../category/component/dashboard'
-import Header from '../../../../../assets/Header'
 import injectSaga from '../../../../../utils/injectSaga';
 import injectReducer from '../../../../../utils/injectReducer';
 import reducer from './reducer';
@@ -39,8 +38,7 @@ export class EntertainmentListList extends React.Component {
 
   return (
       <>
-      <Header/>
-     
+    
       <div className="site-section">
         <br/><br/>      
         <div className="container">

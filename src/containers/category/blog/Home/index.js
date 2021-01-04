@@ -117,7 +117,8 @@ export class Home extends React.Component {
                         </div>
                       </div>
                     </div>
-          
+                  <RecentBlog/>
+                    <Popular/>
                  </div>
                     
                      
@@ -132,8 +133,7 @@ export class Home extends React.Component {
                           </div>
                         </form>
                       </div>
-                     <RecentBlog/>
-                    <Popular/>
+                     
                       
                       
                      </div>

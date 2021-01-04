@@ -6,11 +6,12 @@ import { createStructuredSelector } from 'reselect';
 import {
   makeSelectToken,
 } from '../Others/App/selectors';
+import Loader from './Loader'
 import SignOut from './signout'
 
 const Header = ({ token, logoutRequest, ...rest }) => {
   if (token) return (<>
-
+<Loader/>
 <div class="header-area" id="headerArea">
       <div class="container">
        
@@ -47,7 +48,7 @@ const Header = ({ token, logoutRequest, ...rest }) => {
  
       <ul class="sidenav-nav ps-0">
         <li><a href="/">
-            Home</a></li>
+            News</a></li>
 
         <li><a href="elements.html">
            Entertainment</a></li>
@@ -66,6 +67,10 @@ const Header = ({ token, logoutRequest, ...rest }) => {
 
         <li><a href="/fashion">
         Fashion</a></li>
+
+        <li><a href="#">
+            AjeboTV</a></li>
+
 
         <li><a href="/admin/add">
            Create Post</a></li>
@@ -103,6 +108,7 @@ const Header = ({ token, logoutRequest, ...rest }) => {
   delete rest.component; // eslint-disable-line no-param-reassign
   return (
     <>
+    <Loader/>
    <div class="header-area" id="headerArea">
       <div class="container">
        
@@ -139,7 +145,7 @@ const Header = ({ token, logoutRequest, ...rest }) => {
  
       <ul class="sidenav-nav ps-0">
         <li><a href="/">
-            Home</a></li>
+            News</a></li>
 
         <li><a href="/entertainment">
            Entertainment</a></li>
@@ -159,7 +165,8 @@ const Header = ({ token, logoutRequest, ...rest }) => {
         <li><a href="/fashion">
         Fashion</a></li>
 
-        
+        <li><a href="#">
+            AjeboTV</a></li>
 
         <li>
           <div class="night-mode-nav">
