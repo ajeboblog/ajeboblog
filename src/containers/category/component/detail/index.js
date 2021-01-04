@@ -446,55 +446,30 @@ class AddEdit extends React.PureComponent {
 <Head>
             <title>{one.title}</title>
             <meta
-     
-     name="title"
-     content={this.props.one.title}
-     />
-            <meta
-     
-     name="description"
-     content={this.props.one.body}
-     />
+      key="description"
+      name="description"
+      content="This is the Home of Entertainment News"
+      />
 
 
-<meta
-     property="og:type"
-     content="website"
-     />
+     <meta
+      key="og:site_name"
+      property="og:site_name"
+      content="Ajeboblog"
+      />
 
 <meta
-     property="og:title"
-     content={this.props.one.title}
-     />
+      key="og:type"
+      property="og:type"
+      content="website"
+      />
 
 <meta
-     property="og:description"
-     content={this.props.one.body}
-     />
-
-
-
-<meta
-     property="og:image"
-     content={this.props.one.thumbnail}
-     />
-
-<meta
-     property="twitter:title"
-     content={this.props.one.title}
-     />
-
-<meta
-     property="twitter:description"
-     content={this.props.one.body}
-     />
-
-
-
-<meta
-     property="twitter:image"
-     content={this.props.one.thumbnail}
-     />
+      key="og:title"
+      name="og:title"
+      property="og:title"
+      content="Ajeboblog | Entertainment"
+      />
             </Head>
 
 
