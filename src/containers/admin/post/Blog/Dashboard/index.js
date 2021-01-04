@@ -12,6 +12,7 @@ import injectSaga from '../../../../../utils/injectSaga';
 import injectReducer from '../../../../../utils/injectReducer';
 import reducer from './reducer';
 import saga from './saga';
+import Header from '../../../../../assets/Header'
 
 
 export class EntertainmentListList extends React.Component {
@@ -38,7 +39,7 @@ export class EntertainmentListList extends React.Component {
 
   return (
       <>
-    
+    <Header/>
       <div className="site-section">
         <br/><br/>      
         <div className="container">

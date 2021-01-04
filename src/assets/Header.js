@@ -50,7 +50,7 @@ const Header = ({ token, logoutRequest, ...rest }) => {
         <li><a href="/">
             News</a></li>
 
-        <li><a href="elements.html">
+        <li><a href="/entertainment">
            Entertainment</a></li>
 
 
@@ -77,7 +77,7 @@ const Header = ({ token, logoutRequest, ...rest }) => {
 
 
 
-        <li><a href="/dashboard">
+        <li><a href="/admin">
             Dashboard</a></li>
 
 

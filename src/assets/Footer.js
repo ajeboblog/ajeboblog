@@ -43,8 +43,7 @@ function Footer() {
                 <a href="https://web.facebook.com/ajeboblog"><span className="icon-facebook pt-2 pr-2 pb-2 pl-0"></span></a>
                 <a href="https://twitter.com/ajeboblog"><span className="icon-twitter p-2"></span></a>
                 <a href="https://www.instagram.com/ajeboblogofficial"><span className="icon-instagram p-2"></span></a>
-                <a href="/"><span className="icon-rss p-2"></span></a>
-                <a href="/"><span className="icon-envelope p-2"></span></a>
+                
               </p>
             </div>
           </div>
@@ -53,7 +52,7 @@ function Footer() {
           <div className="col-12 text-center">
             <p>
           
-              Copyright &copy; 2020 All rights reserved | AjeboNews
+              Copyright &copy; 2020 All rights reserved | AjeboBlog
             
               </p>
           </div>
