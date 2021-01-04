@@ -54,8 +54,9 @@ class Subscribe extends Component {
               <form onSubmit={this.handleSubmit} className="d-flex">
                 <input type="text   " className="form-control"  placeholder="Enter your email address" value={email}
                                  onChange={this.handleChange('email')}/>
+                                 <div id="component-error-text">{errors}</div>
                 <input type="submit" className="btn btn-primary" value="Subscribe"/>
-                <div id="component-error-text">{errors}</div>
+                
               </form>
             </div>
           </div>

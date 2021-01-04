@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-//import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
@@ -14,9 +14,8 @@ import reducer from '../../utils/reducer';
 import saga from '../../utils/saga';
 import * as mapDispatchToProps from '../../utils/actions';
 import moment from "moment";
-import dynamic from 'next/dynamic';
-const RecentBlog = dynamic(() => import('../../component/recent2'));
-const Popular  = dynamic(()=> import('../../component/popularpost'));
+import RecentBlog from '../../component/recent'
+import Popular from '../../component/popularpost'
 import Header from '../../../../assets/Header'
 import Footer from '../../../../assets/Footer'
 import Head from 'next/head'
@@ -35,11 +34,9 @@ export class Home extends React.Component {
   }
 
   render() {
-   
+    
     return (
-     
       <>
-
 
 <Head>
       <title> Ajeboblog | Home</title>
@@ -73,23 +70,22 @@ export class Home extends React.Component {
 
     </Head>
 
-    <div>
-
        <Header/>
-
+   
        <section className="site-section py-lg">
                 <div className="container">
+            
                  <div className="row align-items-stretch retro-layout-2">
-                 {this.props.blogs
-                 ? this.props.blogs.slice(0, 3).map(post => {
+                 {this.props.blogs.length >= 1
+            ? this.props.blogs.slice(0, 3).map(blog => {
                 return(
                   <div className="col-md-4" >
             
-            <a href={`/${post.slug_url}`} 
-           className="h-entry mb-30 v-height gradient" style={{backgroundImage: `url(${post.thumbnail})`}} >
+            <a href={`/${blog._id}`} 
+           className="h-entry mb-30 v-height gradient" style={{backgroundImage: `url(${blog.thumbnail})`}} >
             <div className="text">
-              <h2>{post.title.substring(0, 70) + '...'}</h2>
-              <span className="date">{moment(post.published_on).format('MMM Do YYYY')}</span>
+              <h2>{blog.title.substring(0, 70) + '...'}</h2>
+              <span className="date">{moment(blog.published_on).format('MMM Do YYYY')}</span>
             </div>
           </a>
         
@@ -104,17 +100,29 @@ export class Home extends React.Component {
                  </div>
 
 
-                <div className="row blog-entries element-animate">
+                  <div className="row blog-entries element-animate">
+             
+
+
+
                  <div className="col-md-12 col-lg-8 main-content">
-                   <div className="post-content-body">
+
+
+
+                 
+                   <div className="blog-content-body">
                       <div className="row mb-5 mt-5">
                         <div className="col-md-6 mb-4">
                          
                         </div>
                       </div>
                     </div>
+          
                  </div>
                     
+                     
+                    
+        
                     <div className="col-md-12 col-lg-4 sidebar">
                       <div className="sidebar-box search-form-wrap">
                         <form action="/" className="search-form">
@@ -126,19 +134,19 @@ export class Home extends React.Component {
                       </div>
                      <RecentBlog/>
                     <Popular/>
+                      
+                      
                      </div>
                   </div>
                 </div>
               </section> 
-
-       <Footer/>
-
-      </div>
-
    </>
+      
+     
       );
     }
   }
+  
   const mapStateToProps = createStructuredSelector({
     loading: makeSelectRecentBlogsIsLoading(),
     blogs: makeSelectRecentBlogs(),

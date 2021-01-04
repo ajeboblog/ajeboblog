@@ -31,8 +31,8 @@ export class Home extends React.Component {
     
     return (
       <>
+      
      
-     <div className="site-section bg-light">
        <div className="container">
           <div className="row mb-5">
             <div className="col-md-7">
@@ -64,7 +64,8 @@ export class Home extends React.Component {
         }
          </div>
          </div>
-         </div>  
+       
+      
         </>
      
       );

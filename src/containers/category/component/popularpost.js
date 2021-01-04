@@ -12,11 +12,11 @@ function Recent(props) {
  
   return (
     <>
+       <div className="container">
      
- <div className="sidebar-box">
-        <h3 className="heading">Hot Topics</h3>
-        <div className="post-entry-sidebar">
-          <ul>
+     <h5 className="heading">Hot Topics</h5>
+     <div className="post-entry-sidebar">
+       <ul>
           {props.blogs.length >= 1
                   ? props.blogs.slice(0, 6).map(popular => {
                       return (
@@ -28,7 +28,7 @@ function Recent(props) {
                 className="mr-4"
               />
                 <div className="text">
-                      <h4>{popular.title.substring(0, 70) + '...'}</h4>
+                      <h6>{popular.title.substring(0, 70) + '...'}</h6>
                   <div className="post-meta">
                     <span className="mr-2">{moment(popular.published_on).format('MMM Do YYYY')}</span>
                   </div>
@@ -43,6 +43,7 @@ function Recent(props) {
         
         </div>
         </div>
+        
         </>
   );
 }

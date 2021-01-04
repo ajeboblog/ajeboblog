@@ -32,9 +32,10 @@ export class Home extends React.Component {
     
     return (
       <>
+    
+      <div className="container">
      
-      <div className="sidebar-box">
-             <h3 className="heading">Recent Articles</h3>
+             <h5 >Recent Articles</h5>
              <div className="post-entry-sidebar">
                <ul>
      {this.props.blogs
@@ -48,7 +49,7 @@ export class Home extends React.Component {
                       className="mr-4"
                     />
                       <div className="text">
-                            <h4>{recent.title.substring(0, 70) + '...'}</h4>
+                            <h6>{recent.title.substring(0, 70) + '...'}</h6>
                         <div className="post-meta">
                           <span className="mr-2">{moment(recent.published_on).format('MMM Do YYYY')}</span>
                         </div>
@@ -65,8 +66,10 @@ export class Home extends React.Component {
         }
      </ul>
         
+        
         </div>
         </div>
+       
         </>
      
       );

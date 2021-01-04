@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { push } from 'connected-next-router';
+import Header from '../../../../../assets/Header'
 import injectSaga from '../../../../../utils/injectSaga';
 import injectReducer from '../../../../../utils/injectReducer';
 import reducer from './reducer';
@@ -67,7 +68,7 @@ class AddEdit extends React.PureComponent {
     ) :
      (
     <>
-
+<Header/>
 <div className="container-login100">
 		<div className="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
 		

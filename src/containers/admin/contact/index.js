@@ -68,14 +68,14 @@ class ContactUs extends React.Component {
     </div>
     
     
-    <div className="site-section bg-light">
+    <div className="site-section">
       <div className="container">
         <div className="row">
           <div className="col-md-7 mb-5">
 
             
 
-            <form action="/" method="post" className="p-5 bg-white">
+            <form action="/" method="post" className="p-5">
              
 
               <div className="row form-group">
@@ -116,7 +116,7 @@ class ContactUs extends React.Component {
           </div>
           <div className="col-md-5">
             
-            <div className="p-4 mb-3 bg-white">
+            <div className="p-4 mb-3">
               <p className="mb-0 font-weight-bold">Address</p>
               <p className="mb-4">Aggrey Housing Estate, Port-Harcourt Nigeria </p>
 

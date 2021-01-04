@@ -7,7 +7,8 @@ function advertisement() {
     return (
       <>
       <Header/>
-      <div className="site-section bg-light">
+      <br/><br/>
+      <div className="site-section">
         <div className="container">
           <div className="row">
            

@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import moment from "moment";
 import dynamic from 'next/dynamic'
 import InstagramEmbed from 'react-instagram-embed'
+import Loader from '../../../../assets/Loader'
 import { Tweet } from 'react-twitter-widgets'
 const PopularPost = dynamic(() => import('../popularpost2'))
 const RecentPost = dynamic(() => import('../recent'))
@@ -426,11 +427,9 @@ class AddEdit extends React.PureComponent {
                 }
   
   
-                return !this.props.one ? (
+                return one.title.length < 0 ? (
                   <>
-                  <Head>
-                    
-                    </Head>
+                  <Loader/>
                   </>
                   ) :
                    (
@@ -439,8 +438,7 @@ class AddEdit extends React.PureComponent {
 
 <Head>
             <title>{one.title}</title>
-            <meta
-     
+      <meta
      name="description"
      content={one.body}
      />

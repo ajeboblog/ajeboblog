@@ -8,6 +8,8 @@ import store from '../src/store/store';
 import Layout from '../src/assets/Layout'
 import jwtDecode from 'jwt-decode';
 import { setUser, setToken } from '../src/Others/App/actions';
+
+
 //Router Notifier Section
 import ErrorBoundary from '../src/Others/ErrorBoundary';
 import Notifier from '../src/routers/components/Notifier';
@@ -18,10 +20,17 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import injectSaga from '../src/utils/injectSaga';
 import { register } from 'next-offline/runtime'
-import sitestyle from '../src/style/style.scss'
-import '../src/style/image.css'
-// Override variables
 
+
+//STYLESHEETS
+import '../src/style/style.scss'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '../src/style/assets/css/animate.css'
+import '../src/style/assets/css/style.css'
+
+import '../src/style/login/main.css'
+import '../src/style/login/util.css'
+import '../src/style/image.css'
 import "@pathofdev/react-tag-input/build/index.css";
 
 
@@ -81,7 +90,7 @@ if (tokenWithBearer) {
            
             <Provider store = {configureStore}>
             <ConnectedRouter>
-            <style jsx>{sitestyle}</style>
+            
             <SnackbarProvider maxSnack={3}>
             <ErrorBoundary>
             <Notifier />

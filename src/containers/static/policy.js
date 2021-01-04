@@ -5,14 +5,15 @@ import Footer from '../../assets/Footer'
 const policy = () => (
     <div>
       <Header/>
-    <div className="site-section bg-light">
+      <br/><br/>
+    <div className="site-section">
           <div className="container">
             <div className="row">
              
               <div className="col-md-6 mr-auto order-md-1">
               <h2>Privacy &amp; Policy</h2>
               <p>
-                At AjeboNews, the privacy of our visitors is of extreme importance to us.This
+                At Ajebo Blog, the privacy of our visitors is of extreme importance to us.This
                  privacy policy document outlines the types of personal information is recieved 
                  and collected by AjeboNews and how it is used.
                   </p>
@@ -37,7 +38,7 @@ const policy = () => (
               <h2>Cookie</h2>
           
               <p>
-              This cookie is used by Google to report to us how the adverts shown on AjeboNews are performing
+              This cookie is used by Google to report to us how the adverts shown on Ajebo Blog are performing
               . User data is anonymous.<br/>
               You can find out more generally about Google and its policies and principles as regards advertising  <a href="/">Here</a> 
                   </p>
