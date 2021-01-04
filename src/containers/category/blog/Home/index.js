@@ -81,7 +81,7 @@ export class Home extends React.Component {
                 return(
                   <div className="col-md-4" >
             
-            <a href={`/${blog._id}`} 
+            <a href={`/${blog.slug_url}`} 
            className="h-entry mb-30 v-height gradient" style={{backgroundImage: `url(${blog.thumbnail})`}} >
             <div className="text">
               <h2>{blog.title.substring(0, 70) + '...'}</h2>
@@ -140,6 +140,7 @@ export class Home extends React.Component {
                   </div>
                 </div>
               </section> 
+              <Footer/>
    </>
       
      
