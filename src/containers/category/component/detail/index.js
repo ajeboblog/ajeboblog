@@ -445,13 +445,15 @@ class AddEdit extends React.PureComponent {
 
 <Head>
             <title>{one.title}</title>
-      <meta
+            <meta
+     
      name="description"
-     content={one.body}
+     content={this.props.one.body}
      />
 
 
     <meta
+    
      property="og:site_name"
      content="Ajeboblog"
      />
@@ -466,14 +468,14 @@ class AddEdit extends React.PureComponent {
      key="og:title"
      name="og:title"
      property="og:title"
-     content={one.title}
+     content={this.props.one.title}
      />
 
 <meta
      key="og:description"
      name="og:description"
      property="og:description"
-     content={one.body}
+     content={this.props.one.body}
      />
 
 
@@ -482,7 +484,7 @@ class AddEdit extends React.PureComponent {
      key="og:image"
      name="og:image"
      property="og:image"
-     content={one.thumbnail}
+     content={this.props.one.thumbnail}
      />
             </Head>
 
