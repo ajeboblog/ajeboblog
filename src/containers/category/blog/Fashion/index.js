@@ -107,7 +107,7 @@ export class EntertainmentListList extends React.Component {
            </div>
        </div>
       </div>
-    <Footer/>
+    <Footer/><br/><br/>
     <Footer2/>
    </>
       );

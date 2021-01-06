@@ -35,7 +35,6 @@ export class Home extends React.Component {
   }
 
   render() {
-    
     return (
       <>
 
@@ -72,7 +71,9 @@ export class Home extends React.Component {
     </Head>
 
        <Header/>
-   
+       
+     <br/>
+     
        <section className="site-section py-lg">
                 <div className="container">
             
@@ -120,6 +121,7 @@ export class Home extends React.Component {
                     </div>
                   <RecentBlog/>
                     <Popular/>
+
                  </div>
                     
                      
@@ -142,6 +144,7 @@ export class Home extends React.Component {
                 </div>
               </section> 
               <Footer/>
+              <br/><br/>
               <Footer2/>
    </>
       
