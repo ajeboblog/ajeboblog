@@ -23,7 +23,7 @@ import {
   makeSelectErrors,
 } from './selectors';
 import Header from '../../../../assets/Header'
-import Footer from '../../../../assets/Footer'
+import Footer from '../../../../assets/Footer3'
 
 
 import * as mapDispatchToProps from './actions';

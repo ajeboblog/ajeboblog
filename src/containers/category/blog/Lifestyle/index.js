@@ -11,6 +11,7 @@ import RenderBlogs from '../../component/render'
 import Header from '../../../../assets/Header'
 import Loading from '../../../../assets/Loader'
 import Footer from '../../../../assets/Footer'
+import Footer2 from '../../../../assets/Footer2'
 import injectSaga from '../../../../utils/injectSaga';
 import injectReducer from '../../../../utils/injectReducer';
 import reducer from './reducer';
@@ -108,6 +109,7 @@ export class EntertainmentListList extends React.Component {
        </div>
       </div>
     <Footer/>
+    <Footer2/>
    </>
       );
     }

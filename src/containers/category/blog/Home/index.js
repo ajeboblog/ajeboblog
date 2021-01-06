@@ -18,6 +18,7 @@ import RecentBlog from '../../component/recent'
 import Popular from '../../component/popularpost'
 import Header from '../../../../assets/Header'
 import Footer from '../../../../assets/Footer'
+import Footer2 from '../../../../assets/Footer2'
 import Head from 'next/head'
 
 export class Home extends React.Component {
@@ -141,6 +142,7 @@ export class Home extends React.Component {
                 </div>
               </section> 
               <Footer/>
+              <Footer2/>
    </>
       
      
