@@ -9,9 +9,8 @@ import {  makeSelectEntertainmentList,
 import * as mapDispatchToProps from './actions';
 import RenderBlogs from '../../component/render'
 import Header from '../../../../assets/Header'
-import Loading from '../../../../assets/Loader'
-import Footer from '../../../../assets/Footer'
 import Footer2 from '../../../../assets/Footer2'
+import Footer from '../../../../assets/Footer'
 import injectSaga from '../../../../utils/injectSaga';
 import injectReducer from '../../../../utils/injectReducer';
 import reducer from './reducer';
@@ -41,13 +40,7 @@ export class EntertainmentListList extends React.Component {
     } = this.props;
     const pagination = { page, size, totaldata };
 
-    return data.length < 0  ? (
-      <>
-     <Header/>
-    <Loading/>
-    <Footer/>
-    </>
-      ) : (
+  return (
       <>
 <Head>
       <title> Ajeboblog | Fashion</title>
@@ -107,8 +100,9 @@ export class EntertainmentListList extends React.Component {
            </div>
        </div>
       </div>
-    <Footer/><br/><br/>
-    <Footer2/>
+      <Footer/>
+              <br/><br/>
+              <Footer2/>
    </>
       );
     }
