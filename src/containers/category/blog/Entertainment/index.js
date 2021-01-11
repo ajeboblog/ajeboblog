@@ -82,7 +82,7 @@ export class EntertainmentListList extends React.Component {
         <div className="container">
             <div className="row mb-5">
                <div className="col-12">
-               <h2>Entertainment Posts</h2> 
+               <h4>Entertainment Posts</h4> 
                </div>
             </div>
             <div className="row">

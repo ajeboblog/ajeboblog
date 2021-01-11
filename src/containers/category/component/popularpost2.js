@@ -36,7 +36,7 @@ export class Home extends React.Component {
        <div className="container">
           <div className="row mb-5">
             <div className="col-md-7">
-               <h5>Trending</h5>
+               <h5>Trends</h5>
              </div>
           </div>
         <div className="row align-items-stretch retro-layout">

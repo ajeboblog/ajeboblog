@@ -28,6 +28,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../src/style/assets/css/animate.css'
 import '../src/style/assets/css/style.css'
 
+
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel/dist/assets/owl.theme.default.css'
+
 import '../src/style/login/main.css'
 import '../src/style/login/util.css'
 import '../src/style/image.css'
@@ -42,10 +46,9 @@ class MyApp extends App {
 
   
     async componentDidMount () {
-        register('/_next/service-worker.js', { scope: '/'});
+        
         window.addEventListener('scroll', this.scrollUp)
-
-
+        
         const tokenWithBearer = localStorage.getItem('token');
 if (tokenWithBearer) {
   const token = tokenWithBearer.split(' ')[1];

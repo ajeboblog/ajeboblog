@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import  { withRouter } from 'next/router'
 import Head from 'next/head'
 import axios from 'axios'
-
+import Detail from '../src/containers/category/component/detail'
 
 class Post extends Component {
   static async getInitialProps(context) {
    let { query } = context
-   const info =  await axios.get(`https://joydimba.herokuapp.com/api/blog/latest`)
+   const info =  await axios.get(`http://joydimba.herokuapp.com/api/blog/blog/${query.slug}`)
   
    return {
      post: info
@@ -18,27 +18,16 @@ class Post extends Component {
 
   render() {
     
-    console.log(this.props.post.data.title);
+    console.log(this.props.post);
    
     
 
     return (
-		  !this.props.post ? (
-
-			<div className="notification is-danger">
-				<Head>
-					<title>Post Not Found</title>
-				</Head>
-				<h1 className="title"><i>Oops...</i></h1>
-				<p>That post does not exist.</p>
-			</div>
-		) : (
 		 <>
 
 
-
         </>
-    )
+    
     )
     }
 }

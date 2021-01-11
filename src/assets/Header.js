@@ -48,39 +48,50 @@ const Header = ({ token, logoutRequest, ...rest }) => {
  
       <ul class="sidenav-nav ps-0">
         <li><a href="/">
-            News</a></li>
+            Home</a></li>
 
         <li><a href="/entertainment">
            Entertainment</a></li>
 
-
-
-        <li><a href="/lifestyle">
-            Lifestyle</a></li>
-
-
-
-        <li class="affan-dropdown-menu"><a href="/health">
-           Health</a></li>
+           <li class="affan-dropdown-menu"><a href="/lifestyle">
+           Lifestyle</a></li>
 
 
 
-        <li><a href="/fashion">
-        Fashion</a></li>
+        <li class="affan-dropdown-menu"><a href="/music">
+           Music</a></li>
 
-        <li><a href="#">
+
+        <li><a href="/comming-soon">
             AjeboTV</a></li>
 
 
         <li><a href="/admin/add">
-           Create Post</a></li>
+           Create Article</a></li>
+
+           <li><a href="/admin/music/add">
+           Create Music</a></li>
+
+           <li><a href="/admin/album/add">
+           Create Album</a></li>
+
+           <li><a href="/admin/chart/add">
+           Create Chart</a></li>
 
 
 
         <li><a href="/admin">
-            Dashboard</a></li>
+            Admin Blog</a></li>
 
 
+            <li><a href="/admin/music">
+            Admin Music</a></li>
+
+            <li><a href="/admin/album">
+            Admin Album</a></li>
+
+            <li><a href="/admin/chart">
+            Admin Chart</a></li>
 
         <li class="affan-dropdown-menu"><a href="/profile">
            Profile</a></li>
@@ -145,27 +156,22 @@ const Header = ({ token, logoutRequest, ...rest }) => {
  
       <ul class="sidenav-nav ps-0">
         <li><a href="/">
-            News</a></li>
+            Home</a></li>
 
         <li><a href="/entertainment">
            Entertainment</a></li>
 
-
-
-        <li><a href="/lifestyle">
-            Lifestyle</a></li>
-
-
-
-        <li class="affan-dropdown-menu"><a href="/health">
-           Health</a></li>
+           <li class="affan-dropdown-menu"><a href="/comming-soon">
+           Lifestyle</a></li>
 
 
 
-        <li><a href="/fashion">
-        Fashion</a></li>
+           <li class="affan-dropdown-menu"><a href="/music">
+            Music</a>
+          
+           </li>
 
-        <li><a href="#">
+        <li><a href="/comming-soon">
             AjeboTV</a></li>
 
         <li>

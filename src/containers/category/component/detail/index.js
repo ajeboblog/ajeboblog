@@ -1,67 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { createStructuredSelector } from 'reselect';
 import moment from "moment";
 import dynamic from 'next/dynamic'
 import InstagramEmbed from 'react-instagram-embed'
-import Loader from '../../../../assets/Loader'
 import { Tweet } from 'react-twitter-widgets'
 const PopularPost = dynamic(() => import('../popularpost2'))
 const RecentPost = dynamic(() => import('../recent'))
 import Head from 'next/head'
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { push } from 'connected-next-router';
-import injectSaga from '../../../../utils/injectSaga';
-import injectReducer from '../../../../utils/injectReducer';
-import reducer from './reducer';
-import saga from './saga';
-import {
-  makeSelectOne,
-  makeSelectCategory,
-  makeSelectLoading,
-  makeSelectErrors,
-} from './selectors';
 import Header from '../../../../assets/Header'
-import Footer from '../../../../assets/Footer3'
-
-
-import * as mapDispatchToProps from './actions';
+import Footer from '../../../../assets/Footer'
+import Footer2 from '../../../../assets/Footer2'
 
 
 class AddEdit extends React.PureComponent {
-  static propTypes = {
-    loadOneRequest: PropTypes.func.isRequired,
-    loadUsersRequest: PropTypes.func.isRequired,
-    loadCategoryRequest: PropTypes.func.isRequired,
-    addEditRequest: PropTypes.func.isRequired,
-    setOneValue: PropTypes.func.isRequired,
-    classes: PropTypes.object.isRequired,
-    one: PropTypes.object.isRequired,
-    category: PropTypes.array,
-    tempTag: PropTypes.string,
-    push: PropTypes.func.isRequired,
-  };
-
-
-
-  componentDidMount() {
-		this.props.clearOne();
-		this.props.clearErrors();
-		if (this.props.post) {
-		  this.props.loadOneRequest(this.props.post);
-		}
-	  }
-
 
 
     renderTwitter(one){
       if(one.twitter){
         return(
-          <>
           <Tweet tweetId={one.twitter} />
-          <br/>
-          </>
         )
       }
     }
@@ -87,15 +43,12 @@ class AddEdit extends React.PureComponent {
 
     renderImage1(one) {
       if (one.images[0]) {
-        return (<>
+        return (
           <img
             src={one.images[0].data_url}
             alt="ajeboblog"
             className="img-fluid"
-          
           />
-          <br/>
-          </>
         );
       }
       else{
@@ -110,14 +63,13 @@ class AddEdit extends React.PureComponent {
     
     renderImage2(one) {
       if (one.images[1]) {
-        return (<>
+        return (
           <img
             src={one.images[1].data_url}
             alt="ajeboblog"
             className="img-fluid2"
           />
-          <br/>
-          </>
+          
         );
       }
       else{
@@ -253,16 +205,9 @@ class AddEdit extends React.PureComponent {
   render() {
    
     const {
-      classes,
+     
       one,
-      category,
-      users,
-      tempTag,
-      tempMetaTag,
-      tempMetaKeyword,
-      match,
-      loading,
-      errors,
+     
     } = this.props;
     
     const str = one.description 
@@ -434,47 +379,8 @@ class AddEdit extends React.PureComponent {
                 }
   
   
-                return one.category.length < 0 ? (
-                  <>
-                  <Loader/>
-                  </>
-                  ) :
-                   (
+   return (
     <>
-
-
-<Head>
-            <title>{one.title}</title>
-            <meta
-      key="description"
-      name="description"
-      content="This is the Home of Entertainment News"
-      />
-
-
-     <meta
-      key="og:site_name"
-      property="og:site_name"
-      content="Ajeboblog"
-      />
-
-<meta
-      key="og:type"
-      property="og:type"
-      content="website"
-      />
-
-<meta
-      key="og:title"
-      name="og:title"
-      property="og:title"
-      content="Ajeboblog | Entertainment"
-      />
-            </Head>
-
-
-
-
 <Header/>
     <div className="site-cover site-cover-sm same-height overlay single-page" style = {{backgroundImage: `url("${one.thumbnail}")`}}>
         <div className="container">
@@ -485,7 +391,7 @@ class AddEdit extends React.PureComponent {
                 <h1 className="mb-4">{one.title}</h1>
                 <div className="post-meta align-items-center text-center">
                   <figure className="author-figure mb-0 mr-3 d-inline-block"><img src={one.avatar} alt={one.author} className="img-fluid"/></figure>
-                  <span className="d-inline-block mt-1">By {one.name}</span>
+                  <span className="d-inline-block mt-1">By {one.author}</span>
                   <span>&nbsp;-&nbsp; {moment(one.published_on).format('MMM Do YYYY')}</span>
                 </div>
               </div>
@@ -505,9 +411,10 @@ class AddEdit extends React.PureComponent {
               {this.renderBody1(firstline)}
               {this.renderBody2(secondline)}
               {this.renderImage1(one)}
+           
               {this.renderBody3(thirdline)}
-              {this.renderBody4(fourthline)}
               {this.renderImage2(one)}
+              {this.renderBody4(fourthline)}
               {this.renderBody5(fifthline)}
               {this.renderBody6(sixthline)}
               {this.renderBody7(seventhline)}
@@ -557,31 +464,12 @@ class AddEdit extends React.PureComponent {
       </div>
   <PopularPost/> 
 <Footer/>
+<br/><br/><Footer2/>
     </>
     );
   }
 }
 
-const withReducer = injectReducer({ key: 'blogManagePage', reducer });
-const withSaga = injectSaga({ key: 'blogManagePage', saga });
 
-const mapStateToProps = createStructuredSelector({
-  one: makeSelectOne(),
-  category: makeSelectCategory(),
-  loading: makeSelectLoading(),
-  errors: makeSelectErrors(),
-});
+export default AddEdit
 
-const withConnect = connect(
-  mapStateToProps,
-  { ...mapDispatchToProps, push },
-);
-
-export default compose(
-  withReducer,
-  withSaga,
-  withConnect,
-)(AddEdit);
-
-
-//ADD iMAGES AND SOCIALS NO TAG YET

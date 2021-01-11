@@ -4,6 +4,8 @@ import dynamic from 'next/dynamic'
 import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+const OwlCarousel = dynamic(() => import('react-owl-carousel'),
+{ ssr: false })
 import {
   makeSelectRecentBlogsIsLoading,
   makeSelectRecentBlogs,
@@ -19,6 +21,10 @@ import Popular from '../../component/popularpost'
 import Header from '../../../../assets/Header'
 import Footer from '../../../../assets/Footer'
 import Footer2 from '../../../../assets/Footer2'
+import Music from '../Music/components/latest'
+import Chart from '../Music/components/chart'
+
+import Album from '../Music/components/album'
 import Head from 'next/head'
 
 export class Home extends React.Component {
@@ -28,13 +34,50 @@ export class Home extends React.Component {
     blogs: PropTypes.array.isRequired,
   };
 
+
+  state= {
+    responsive:{},
+}
+
   componentDidMount() {
     this.props.clearOne();
     this.props.loadRecentBlogsRequest();
     this.props.loadPopularPostRequest();
-  }
+
+
+    const desktop = this.props.desktop ? this.props.desktop : 4;
+    const tablet = this.props.tablet ? this.props.tablet : 2;
+    const mobile = this.props.mobile ? this.props.mobile : 1;
+    this.setState({
+        responsive:{
+            0: {
+                items: mobile,
+            },
+            768: {
+                items: tablet,
+            },
+            1000:{
+                item: desktop
+            }
+        }
+    })
+}
+  
+
+
 
   render() {
+const blogs = this.props.blogs
+
+const posts = this.props.posts;
+        const column = this.props.column ? this.props.column : 4;
+        const gap = this.props.gap ? this.props.gap : 10;
+        const loop = this.props.loop === false ? this.props.loop : true;
+        const dots = this.props.dots === false ? this.props.dots : true;
+        const nav = this.props.nav === false ? this.props.nav : false;
+        const autoPlay = this.props.autoPlay === false ? this.props.autoPlay : true;
+
+
     return (
       <>
 
@@ -77,70 +120,90 @@ export class Home extends React.Component {
        <section className="site-section py-lg">
                 <div className="container">
             
-                 <div className="row align-items-stretch retro-layout-2">
-                 {this.props.blogs.length >= 1
-            ? this.props.blogs.slice(0, 3).map(blog => {
-                return(
-                  <div className="col-md-4" >
-            
-            <a href={`/${blog.slug_url}`} 
-           className="h-entry mb-30 v-height gradient" style={{backgroundImage: `url(${blog.thumbnail})`}} >
-            <div className="text">
-              <h2>{blog.title.substring(0, 70) + '...'}</h2>
-              <span className="date">{moment(blog.published_on).format('MMM Do YYYY')}</span>
-            </div>
-          </a>
-        
-            </div>
-           );
-        }
-        ): 
-        <div>
-        
-        </div>
-        }
-                 </div>
+                
+
+
+          <OwlCarousel className="owl-theme"
+                            loop={loop}
+                            margin={gap}
+                            nav={nav}
+                            dots={dots}
+                            items={column}
+                            autoplay={autoPlay}
+                            responsive={this.state.responsive}
+                             >
+
+<div class="item">
+                  <div class="single-hero-post">
+                  
+                  <div class="slide-img bg-img"></div>
+                 
+                  <div class="hero-slides-content">
+                <p>category1</p>
+                      <a href="#" class="post-title">
+                          <h4>title1</h4>
+                      </a>
+                  </div>
+              </div>
+                  </div>
+
+
+
+                  
+                  <div class="item">
+                  <div class="single-hero-post">
+                  
+                  <div class="slide-img bg-img"></div>
+                 
+                  <div class="hero-slides-content">
+                <p>category2</p>
+                      <a href="#" class="post-title">
+                          <h4>title2</h4>
+                      </a>
+                  </div>
+              </div>
+                  </div>
+
+
+                  
+                  <div class="item">
+                  <div class="single-hero-post">
+                  
+                  <div class="slide-img bg-img"></div>
+                 
+                  <div class="hero-slides-content">
+                <p>category3</p>
+                      <a href="#" class="post-title">
+                          <h4>title3</h4>
+                      </a>
+                  </div>
+              </div>
+                  </div>
+
+             
+                 </OwlCarousel>
 
 
                   <div className="row blog-entries element-animate">
-             
-
-
-
-                 <div className="col-md-12 col-lg-8 main-content">
-
-
-
+                 <div className="col-12  main-content">
+                   <RecentBlog/>
+                  <Popular/>
+                  <br/>
+ 
+                  <Chart/>
+                  
+                  <br/>
+                  <hr/>
+                  <br/> <br/><br/><br/>
                  
-                   <div className="blog-content-body">
-                      <div className="row mb-5 mt-5">
-                        <div className="col-md-6 mb-4">
-                         
-                        </div>
-                      </div>
+                  <Music/>
+                  <Album/>
                     </div>
-                  <RecentBlog/>
-                    <Popular/>
 
-                 </div>
-                    
-                     
-                    
-        
-                    <div className="col-md-12 col-lg-4 sidebar">
-                      <div className="sidebar-box search-form-wrap">
-                        <form action="/" className="search-form">
-                          <div className="form-group">
-                            <span className="icon fa fa-search"></span>
-                            <input type="text" className="form-control" id="s" placeholder="Type a keyword and hit enter"/>
-                          </div>
-                        </form>
-                      </div>
-                     
-                      
-                      
-                     </div>
+
                   </div>
+
+
                 </div>
               </section> 
               <Footer/>

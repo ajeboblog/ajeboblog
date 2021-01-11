@@ -18,6 +18,8 @@ import {
 import * as mapDispatchToProps from './actions';
 import Header from '../../../assets/Header'
 import Footer from '../../../assets/Footer'
+import Footer2 from '../../../assets/Footer2'
+
 
 class ContactUs extends React.Component {
     state = { name: '', email: '', subject: '', message: '', reCaptcha: '' };
@@ -132,7 +134,9 @@ class ContactUs extends React.Component {
         </div>
       </div>
     </div>
-        <Footer/>
+    <Footer/>
+              <br/><br/>
+              <Footer2/>
       </div>
     )
 }

@@ -47,7 +47,7 @@ const Dashboard = props => {
                       <a href={`/${slug_url}`}>
                       <img
                         src={thumbnail}
-                        className="img-fluid rounded"
+                        className="image-field2"
                         alt="ajeboblog"
                       />
 
