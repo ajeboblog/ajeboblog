@@ -17,13 +17,13 @@ export const GOOGLE_CLIENT_ID =
 
 export const API_BASE =
   process.env.NODE_ENV === 'production'
-    ? 'https://joydimba.herokuapp.com/api/'
-    : 'https://joydimba.herokuapp.com/api/';
+    ? 'http://localhost:5000/api/'
+    : 'http://localhost:5000/api/';
 
 export const IMAGE_BASE =
   process.env.NODE_ENV === 'production'
-    ? 'https://joydimba.herokuapp.com/api/'
-    : 'https://joydimba.herokuapp.com/api/';
+    ? 'http://localhost:5000/api/'
+    : 'http://localhost5000/api/';
 
 export const DATE_FORMAT = 'll';
 

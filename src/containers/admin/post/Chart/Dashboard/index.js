@@ -7,7 +7,7 @@ import {  makeSelectEntertainmentList,
   makeSelectLoading,
   } from './selectors';
 import * as mapDispatchToProps from './actions';
-import RenderBlogs from '../../../../category/component/dashboard'
+import RenderBlogs from '../../../../category/component/music'
 import injectSaga from '../../../../../utils/injectSaga';
 import injectReducer from '../../../../../utils/injectReducer';
 import reducer from './reducer';

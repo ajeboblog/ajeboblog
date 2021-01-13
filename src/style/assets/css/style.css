@@ -1,7 +1,7 @@
 /* -----------------------------------------
 [Master Stylesheet]
 container
-
+item
 card
 backgroundcolor
 Template Name: Affan - PWA Mobile HTML Template
@@ -6524,3 +6524,492 @@ div.dataTables_wrapper div.dataTables_paginate {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+.item {
+  position: relative;
+  margin: 0 auto; }
+  .item::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .item .top {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.4));
+    background-repeat: repeat-x;
+    border-radius: inherit;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; }
+  .item .bottom {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+    background-repeat: repeat-x;
+    border-radius: inherit;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+  .item .center {
+    position: absolute;
+    padding: 0 !important;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px; }
+  .no-gutter .item {
+    border-radius: 0; }
+
+.item-overlay {
+  line-height: 1;
+  color: #fff;
+  padding: 8px;
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: absolute;
+  border-radius: inherit; }
+  .item-overlay.active, .item-overlay.open,
+  .item-overlay .item:focus,
+  .item:hover .item-overlay {
+    opacity: 1;
+    display: block !important; }
+  .item-overlay.w-full {
+    top: 0;
+    bottom: 0; }
+  .item-overlay > a,
+  .item-overlay > .btn {
+    min-width: 20px;
+    text-align: center;
+    display: inline-block; }
+
+.item-media {
+  position: relative;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  border-radius: inherit; }
+  .item-media:after {
+    content: '';
+    display: block;
+    padding-top: 100%; }
+
+.item-media-21by9:after {
+  padding-top: 42.857143%; }
+
+.item-media-16by9:after {
+  padding-top: 56.25%; }
+
+.item-media-4by3:after {
+  padding-top: 75%; }
+
+.item-media-2by3:after {
+  padding-top: 150%; }
+
+.item-media-3by4:after {
+  padding-top: 133.33333%; }
+
+.item-media-2by1:after {
+  padding-top: 50%; }
+
+.item-media-1by2:after {
+  padding-top: 200%; }
+
+.item-media iframe,
+.item-media-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 0;
+  border-radius: inherit;
+  background-size: cover;
+  background-repeat: none;
+  background-position: 50% 50%;
+  background-color: rgba(120, 120, 120, 0.2); }
+
+.item-info {
+  position: relative;
+  padding: 10px 0 20px 0;
+  border-radius: inherit; }
+  .item-info .item-overlay {
+    display: none; }
+  .item-info .bottom {
+    bottom: 100%; }
+
+.item-info-overlay .item-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding: 15px 20px;
+  color: #fff; }
+  .item-info-overlay .item-info .item-overlay {
+    bottom: 0; }
+  .item-info-overlay .item-info .item-title {
+    font-size: 1.125rem; }
+    .item-info-overlay .item-info .item-title a:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%; }
+  .item-info-overlay .item-info .item-title,
+  .item-info-overlay .item-info .item-author,
+  .item-info-overlay .item-info .item-except {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 -1px 2px rgba(0, 0, 0, 0.1); }
+  .item-info-overlay .item-info .item-author,
+  .item-info-overlay .item-info .item-except {
+    position: relative; }
+
+.item-info-overlay .item-overlay {
+  z-index: 1; }
+
+.item-title {
+  font-weight: 600; }
+
+.item-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.item-bg img {
+  position: absolute;
+  width: 110%;
+  left: 50%;
+  top: 50%;
+  margin-left: -55%;
+  margin-top: -55%; }
+
+
+.item-grid .item-info {
+  min-height: 50px; }
+
+.item-list .item {
+  padding: 12px 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  border-radius: 5; }
+  .item-list .item:hover, .item-list .item:focus {
+    background-color: rgba(120, 120, 120, 0.1); }
+    .item-list .item:hover .item-info:after, .item-list .item:focus .item-info:after {
+      display: none; }
+
+.item-list .visible-list {
+  display: block !important; }
+
+.item-list.item-list-lg .item-media {
+  width: 90px;
+  height: 90px; }
+
+.item-list.item-list-lg .item-info {
+  min-height: 90px; }
+
+.item-list.item-list-md .item-media {
+  width: 60px;
+  height: 60px; }
+
+.item-list.item-list-md .item-info {
+  min-height: 60px; }
+
+.item-list.item-list-sm .item-media {
+  width: 40px;
+  height: 40px; }
+
+.item-list.item-list-sm .item-info {
+  min-height: 40px; }
+
+.item-list.item-list-xs .item-media {
+  width: 0;
+  height: 0;
+  position: static; }
+  .item-list.item-list-xs .item-media button {
+    width: 30px;
+    height: 30px; }
+
+.item-list.item-list-xs .item-media-content {
+  display: none; }
+
+.item-list.item-list-xs .item-info {
+  min-height: 20px; }
+
+.item-list.item-list-xs .center {
+  left: 30px;
+  margin-top: -15px; }
+
+.item-list.item-list-xs .item:hover:before,
+.item-list.item-list-xs .item:focus:before,
+.item-list.item-list-xs .item.active:before,
+.item-list.item-list-xs .open .item:before {
+  opacity: 0; }
+
+.item-list.item-list-by > div {
+  float: none;
+  width: 100%; }
+
+.item-list .item-media {
+  width: 120px;
+  height: 120px;
+  padding-bottom: 0;
+  float: left;
+  margin-right: 16px;
+  z-index: 1; }
+
+.item-list .item-info {
+  padding: 0;
+  position: relative;
+  min-height: 120px; }
+  .item-list .item-info .bottom {
+    position: relative;
+    float: right;
+    background: transparent;
+    color: inherit; }
+  .item-list .item-info:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    border-bottom: 1px solid rgba(120, 120, 120, 0.1); }
+
+.item-list .item-meta-right {
+  position: absolute;
+  right: 0;
+  top: 2px; }
+
+.item-list .item:hover .item-meta-right,
+.item-list .item:focus .item-meta-right,
+.item-list .open ~ .item-meta .item-meta-right {
+  display: none; }
+
+.item-list-li {
+  counter-reset: li; }
+  .item-list-li .item {
+    padding-left: 50px; }
+  .item-list-li .item-overlay {
+    padding: 3px 8px; }
+  .item-list-li .item:before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -12px;
+    content: counter(li);
+    counter-increment: li;
+    text-align: center;
+    width: 50px;
+    display: inline-block;
+    opacity: 0.6;
+    font-size: 16px;
+    font-weight: bold; }
+
+.item-masonry .item {
+  margin-bottom: 24px; }
+
+.item-masonry .item-media-1by2 {
+  padding-top: 24px; }
+
+.item-masonry.row-sm .item {
+  margin-bottom: 16px; }
+
+.item-masonry.row-sm .item-media-1by2 {
+  padding-top: 16px; }
+
+.item-masonry.row-xs .item {
+  margin-bottom: 8px; }
+
+.item-masonry.row-xs .item-media-1by2 {
+  padding-top: 8px; }
+
+@media (max-width: 991px) {
+  .item-masonry .item {
+    margin-bottom: 16px; }
+  .item-masonry .item-media-1by2 {
+    padding-top: 16px; }
+  .item-list .item {
+    margin-left: -8px;
+    margin-right: -8px; } }
+
+@media (max-width: 767px) {
+  .item-masonry .item {
+    margin-bottom: 8px; }
+  .item-masonry .item-media-1by2 {
+    padding-top: 8px; }
+  .item-masonry.row-sm .item {
+    margin-bottom: 8px; }
+  .item-masonry.row-sm .item-media-1by2 {
+    padding-top: 8px; }
+  .item-masonry.row-xs .item {
+    margin-bottom: 4px; }
+  .item-masonry.row-xs .item-media-1by2 {
+    padding-top: 4px; }
+  .item-list .item {
+    margin-left: -4px;
+    margin-right: -4px; } }
+
+
+
+
+
+
+
+
+    .item-cart-btn a.added_to_cart{
+      font-size: 0.8rem;
+      line-height: 1.25;
+      padding: 0 5px;
+      background-color: rgba(0,0,0,0.1);
+      border-radius: 50px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .add_to_cart_button ins{
+      text-decoration: none;
+    }
+    
+    .btn-like i,
+    .btn-follow i{
+      font-style: normal;
+    }
+    
+    .btn-like i.active,
+    .btn-follow i.active{
+      display: none;
+    }
+    
+    .btn-like.active i,
+    .btn-follow.active i{
+      display: none;
+    }
+    
+    .btn-like.active i.active,
+    .btn-follow.active i.active{
+      display: block;
+    }
+    
+    .item-overlay .btn-like{
+      padding: 0;
+    }
+    
+    .item-overlay .btn-like .btn-icon{
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      background-color: transparent !important;
+      font-size: 14px;
+    }
+    
+    .btn-playlist{
+      display: none;
+    }
+    
+    .item-track .btn-playlist{
+      display: block;
+    }
+    
+    .item-action .dropdown{
+      display: inline;
+    }
+    
+    .item-overlay .btn-more{
+      padding: 2px 2px;
+    }
+    
+    .item-overlay .item-cart-btn{
+      float: left;
+      display: inline-block;
+      padding: 2px 6px 1px 2px;
+    }
+    
+    .item-list-li .item-overlay{
+      padding: 0px 8px;
+    }
+    
+    .item-grid .item-info{
+      min-height: 70px;
+    }
+    
+    .item-grid .item-info-user{
+      min-height: 100px;
+    }
+    
+    .item-grid .item-info-user{
+      text-align: center;
+    }
+    
+    .item-action .item-cart-btn a{
+      padding: 4px 12px;
+      margin: 0 4px;
+    }
+    
+    .item-action .btn-playpause:after{
+      background-color: transparent !important;
+    }
+    
+    .item .item-meta-right{
+      padding-left: 10px;
+      position: static;
+      float: right;
+    }
+    
+    .item-list .item:hover .item-meta-right,
+    .item-list .item:focus .item-meta-right,
+    .item-list .open ~ .item-meta-right {
+      display: none; }
+    
+    .item-grid .item-meta-right{
+      position: absolute;
+      bottom: 0;
+      padding: 0;
+      width: 100%;
+    }
+    
+    .item-list .item-meta-bottom{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+    .item-user .btn-follow .btn{
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+    }
+    
+    #nprogress .spinner-icon{
+      display: none;
+    }
+    
+    .page-numbers{
+      background-color: rgba(120,130,140,0.1);
+      border: 1px solid rgba(120,130,140,0.1);
+      display: inline-block;
+      padding: .25rem .75rem;
+      border-radius: 3px;
+    }
+    
+    .page-numbers.current{
+      opacity: 0.5;
+    }

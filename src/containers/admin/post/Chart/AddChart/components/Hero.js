@@ -34,9 +34,9 @@ const Hero = props => {
           <FormControlLabel
             control={
               <Checkbox
-                checked={(one && one.is_popular) || false}
+                checked={(one && one.is_hero) || false}
                 tabIndex={-1}
-                onClick={handleCheckedChange('is_popular')}
+                onClick={handleCheckedChange('is_hero')}
                 color="primary"
               />
             }

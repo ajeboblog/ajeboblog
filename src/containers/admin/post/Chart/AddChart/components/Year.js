@@ -40,7 +40,7 @@ const Year = props => {
         type="date"
         value={
           (
-            moment((one && one.year)).format("YYYY")) 
+            moment((one && one.year)).format("YYYY-MM-DD")) 
         }
         name="year"
         onChange={handlePublishedOn('year')}

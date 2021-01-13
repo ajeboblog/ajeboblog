@@ -38,7 +38,7 @@ function* addEdit() {
   if (errors.isValid) {
     yield fork(
       Api.post(
-        'blog/',
+        'ep /',
       actions.addEditSuccess,
       actions.addEditFailure,
       data,

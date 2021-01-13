@@ -33,8 +33,19 @@ export default class newmusic extends Component {
 }
 
   render() {
-    const styling = {
-      backgroundImage: `url('./images/bg-01.jpg')`,
+    const styling1 = {
+      backgroundImage: `url('images/16.jpg')`,
+    }
+
+    const styling2 = {
+      backgroundImage: `url('images/17.jpg')`,
+    }
+    const styling4 = {
+      backgroundImage: `url('images/14.jpg')`,
+    }
+
+    const styling3 = {
+      backgroundImage: `url('images/27.jpg')`,
     }
 
 
@@ -69,7 +80,7 @@ export default class newmusic extends Component {
                              >
 
 <div class="item">
-                  <div class="single-hero-post">
+                  <div class="single-hero-post" style={styling1}>
                   
                   <div class="slide-img bg-img"></div>
                  
@@ -86,7 +97,7 @@ export default class newmusic extends Component {
 
                   
                   <div class="item">
-                  <div class="single-hero-post">
+                  <div class="single-hero-post" style={styling3}>
                   
                   <div class="slide-img bg-img"></div>
                  
@@ -102,7 +113,7 @@ export default class newmusic extends Component {
 
                   
                   <div class="item">
-                  <div class="single-hero-post">
+                  <div class="single-hero-post"  style={styling2}>
                   
                   <div class="slide-img bg-img"></div>
                  

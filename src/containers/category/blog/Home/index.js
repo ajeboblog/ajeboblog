@@ -22,7 +22,7 @@ import Header from '../../../../assets/Header'
 import Footer from '../../../../assets/Footer'
 import Footer2 from '../../../../assets/Footer2'
 import Music from '../Music/components/latest'
-import Chart from '../Music/components/chart'
+import Chart from '../Music/components/chart2'
 
 import Album from '../Music/components/album'
 import Head from 'next/head'
@@ -68,6 +68,20 @@ export class Home extends React.Component {
 
   render() {
 const blogs = this.props.blogs
+const styling1 = {
+  backgroundImage: `url('images/16.jpg')`,
+}
+
+const styling2 = {
+  backgroundImage: `url('images/17.jpg')`,
+}
+const styling4 = {
+  backgroundImage: `url('images/14.jpg')`,
+}
+
+const styling3 = {
+  backgroundImage: `url('images/27.jpg')`,
+}
 
 const posts = this.props.posts;
         const column = this.props.column ? this.props.column : 4;
@@ -134,7 +148,7 @@ const posts = this.props.posts;
                              >
 
 <div class="item">
-                  <div class="single-hero-post">
+                  <div class="single-hero-post" style={styling2}>
                   
                   <div class="slide-img bg-img"></div>
                  
@@ -151,7 +165,7 @@ const posts = this.props.posts;
 
                   
                   <div class="item">
-                  <div class="single-hero-post">
+                  <div class="single-hero-post"  style={styling4}>
                   
                   <div class="slide-img bg-img"></div>
                  
@@ -167,7 +181,7 @@ const posts = this.props.posts;
 
                   
                   <div class="item">
-                  <div class="single-hero-post">
+                  <div class="single-hero-post"  style={styling3}>
                   
                   <div class="slide-img bg-img"></div>
                  
@@ -190,14 +204,19 @@ const posts = this.props.posts;
                   <Popular/>
                   <br/>
  
+               
+                  <br/> <br/>
+                  <div class="d-flex flex-wrap align-items-end">
+                <div class="flex-grow-1">
+                    <h4>Music</h4>
+                    <p>Listen top chart</p>
+                </div>
+                <hr/>
+                
+                </div><br/>
+                  <Music/><br/><br/><br/>
+                  <Album/><br/><br/><br/>
                   <Chart/>
-                  
-                  <br/>
-                  <hr/>
-                  <br/> <br/><br/><br/>
-                 
-                  <Music/>
-                  <Album/>
                     </div>
 
 

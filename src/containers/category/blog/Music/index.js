@@ -90,17 +90,16 @@ export class EntertainmentListList extends React.Component {
 
                 <div class="heading">
                 <div class="d-flex flex-wrap align-items-end"><div class="flex-grow-1">
-                <h4>New Releases</h4>
-                <p>Listen recently release music</p>
+                <h4>Music</h4>
+                    <p>Listen top chart</p>
                   </div>
             
             </div>
             <hr/>
             </div>
-              <Music/>
+              <Music/><br/><br/><br/>
+              <Album/><br/><br/><br/>
               <Chart/>
-              <Album/>
-              
 
       </div></div>
               <br/><br/>
