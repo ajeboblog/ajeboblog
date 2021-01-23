@@ -7,13 +7,10 @@ import {  makeSelectEntertainmentList,
   makeSelectLoading,
   makeSelectQuery, } from './selectors';
 import * as mapDispatchToProps from './actions';
-
+import RenderBlogs from '../../component/render'
 import Header from '../../../../assets/Header'
 import Footer2 from '../../../../assets/Footer2'
-import Music from './components/latest'
-import Chart from './components/chart'
-import Album from './components/album'
-import Chart2 from './components/chart2'
+import Footer from '../../../../assets/Footer'
 import injectSaga from '../../../../utils/injectSaga';
 import injectReducer from '../../../../utils/injectReducer';
 import reducer from './reducer';
@@ -43,18 +40,14 @@ export class EntertainmentListList extends React.Component {
     } = this.props;
     const pagination = { page, size, totaldata };
 
-    const styling = {
-      backgroundImage: `url('./images/bg-01.jpg')`,
-    }
-
   return (
       <>
 <Head>
-      <title> Ajeboblog | Music</title>
+      <title> Ajeboblog | Entertainment</title>
       <meta
       key="description"
       name="description"
-      content="This is the Home of Nigerian Music"
+      content="This is the Home of Entertainment News"
       />
 
 
@@ -74,7 +67,7 @@ export class EntertainmentListList extends React.Component {
       key="og:title"
       name="og:title"
       property="og:title"
-      content="Ajeboblog | Music"
+      content="Ajeboblog | Entertainment"
       />
 
 
@@ -82,21 +75,32 @@ export class EntertainmentListList extends React.Component {
     </Head>
 
 
-
       <Header/>
      
       <div className="site-section">
         <br/><br/>      
-        <div class="container overflow-hidden">
+        <div className="container">
+            <div className="row mb-5">
+               <div className="col-12">
+               <h4>Fashion Posts</h4> 
+               </div>
+            </div>
+            <div className="row">
 
-                
-              <Music/><br/><br/><br/>
-              <Album/><br/><br/><br/>
-              <Chart/>
+            <RenderBlogs
+              loading={loading}
+              currentBlogs={data}
+              pagination={pagination}
+              handlePagination={this.handlePagination}
+            />
 
-      </div></div>
-              <br/><br/>
-              <Footer2/>
+
+
+           </div>
+       </div>
+      </div>
+      <Footer/><br/><br/>
+      <Footer2/>
    </>
       );
     }

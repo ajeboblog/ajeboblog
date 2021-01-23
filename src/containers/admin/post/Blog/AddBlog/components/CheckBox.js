@@ -41,17 +41,7 @@ const CheckInput = props => {
             }
             label="Is Active"
           />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={(one && one.is_published) || false}
-                tabIndex={-1}
-                onClick={handleCheckedChange('is_published')}
-                color="primary"
-              />
-            }
-            label="Is Published"
-          />
+          
 
  </>
     

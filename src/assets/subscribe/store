@@ -1,0 +1,268 @@
+import React, { Component } from 'react'
+import  { withRouter } from 'next/router'
+import Head from 'next/head'
+import axios from 'axios'
+import InstagramEmbed from 'react-instagram-embed'
+import { Tweet } from 'react-twitter-widgets'
+import moment from "moment";
+import loadable from '@loadable/component'
+
+
+class Post extends Component {
+  static async getInitialProps(context) {
+   let { query } = context
+   const post =  await axios.get(`http://localhost:5000/api/blog/blog/${query.slug  }`)
+  
+   return {
+     post: post.data
+   }
+}
+
+
+renderTwitter(post){
+  if(post.twitter){
+    return(
+      <Tweet tweetId={post.twitter} />
+    )
+  }
+}
+
+renderInstagram(post){
+  if(post.instagram){
+    return(
+      <InstagramEmbed
+      url={post.instagram}
+      maxWidth = {320}
+      hideCaption={false}
+      containerTagName='div'
+      protocol=''
+      injectScript
+      onLoading={() => {}}
+      onSuccess={() => {}}
+      onAfterRender={() => {}}
+      onFailure={() => {}}
+     />
+    )
+  }
+}
+
+renderMainImage1(post) {
+  if (post.image1) {
+    return (
+      <img
+        src={post.image1}
+        alt="ajeboblog"
+        className="img-fluid"
+      />
+    );
+  }
+}
+
+renderMainImage2(post) {
+  if (post.image2) {
+    return (
+      <img
+        src={post.image2}
+        alt="ajeboblog"
+        className="img-fluid"
+      />
+      
+    );
+  }
+}
+
+renderMainBody(post) {
+  if (post.description) {
+    return (
+    <p><h7>{post.description}</h7></p>
+    );
+  }
+}
+
+
+renderMainBody1(post) {
+  if (post.body1) {
+    return (
+    <p><h7>{post.body1}</h7></p>
+    );
+  }
+}
+
+renderMainBody2(post) {
+  if (post.body2) {
+    return (
+    <p><h7>{post.body2}</h7></p>
+    );
+  }
+}
+
+renderMainTag1(post) {
+  if (post.tag1) {
+    return (
+      <li><a href="/">{post.tag1}</a></li>
+    );
+  }
+}
+
+renderMainTag2(post) {
+  if (post.tag2) {
+    return (
+      <li><a href="/">{post.tag2}</a></li>
+    );
+  }
+}
+
+renderMainCategory(post) {
+  if (post.category) {
+    return (
+      <li><a href="/">{post.category}</a></li>
+    );
+  }
+}
+
+  render() {
+    
+    console.log(this.props.post);
+    
+
+		return (
+		  !this.props.post ? (
+
+			<div className="notification is-danger">
+				<Head>
+					<title>Post Not Found</title>
+				</Head>
+				<h1 className="title"><i>Oops...</i></h1>
+				<p>That post does not exist.</p>
+			</div>
+		) : (
+        <div>
+            <Head>
+            <title>{this.props.post.data.title}</title>
+            <meta
+     
+     name="description"
+     content={this.props.post.data.description}
+     />
+
+
+    <meta
+    
+     property="og:site_name"
+     content="Ajeboblog"
+     />
+
+<meta
+     key="og:type"
+     property="og:type"
+     content="website"
+     />
+
+<meta
+     key="og:title"
+     name="og:title"
+     property="og:title"
+     content={this.props.post.data.title}
+     />
+
+<meta
+     key="og:description"
+     name="og:description"
+     property="og:description"
+     content={this.props.post.data.description}
+     />
+
+
+
+<meta
+     key="og:image"
+     name="og:image"
+     property="og:image"
+     content={this.props.post.data.thumbnail}
+     />
+            </Head>
+            <div className="site-cover site-cover-sm same-height overlay single-page" style = {{backgroundImage: `url("${this.props.post.data.thumbnail}")`}}>
+        <div className="container">
+          <div className="row same-height justify-content-center">
+            <div className="col-md-12 col-lg-10">
+              <div className="post-entry text-center">
+                <span className="post-category text-white bg-success mb-3">{this.props.post.data.category}</span>
+                <h1 className="mb-4">{this.props.post.data.title}</h1>
+                <div className="post-meta align-items-center text-center">
+                  <figure className="author-figure mb-0 mr-3 d-inline-block"><img src={this.props.post.data.authorImage} alt="Ajeboblog" className="img-fluid"/></figure>
+                  <span className="d-inline-block mt-1">By {this.props.post.data.author}</span>
+                  <span>&nbsp;-&nbsp; {moment(this.props.post.data.createdAt).format('MMM Do YYYY')}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div>
+        <section className="site-section py-lg">
+        <div className="container">
+          
+          <div className="row blog-entries element-animate">
+  
+            <div className="col-md-12 col-lg-8 main-content">
+              
+              <div className="post-content-body">
+              {this.renderMainBody(this.props.post.data)}
+                
+              <div className="row mb-5 mt-5">
+                <div className="col-md-12 mb-4">
+                {this.renderMainImage1(this.props.post.data)}
+                </div>
+                
+                {this.renderMainBody1(this.props.post.data)}
+                {this.renderTwitter(this.props.post.data)}
+                {this.renderInstagram(this.props.post.data)}
+                <div className="col-md-6 mb-4">
+                {this.renderMainImage2(this.props.post.data)}
+                </div>
+               
+              </div>
+            
+              {this.renderMainBody2(this.props.post.data)}
+              
+              </div>
+  
+  
+            </div>
+  
+            
+  
+            <div className="col-md-12 col-lg-4 sidebar">
+              <div className="sidebar-box search-form-wrap">
+                <form action="/" className="search-form">
+                  <div className="form-group">
+                    <span className="icon fa fa-search"></span>
+                    <input type="text" className="form-control" id="s" placeholder="Type a keyword and hit enter"/>
+                  </div>
+                </form>
+              </div>
+            
+  
+              <div className="sidebar-box">
+                <h3 className="heading">Tags</h3>
+                <ul className="tags">
+                {this.renderMainTag1(this.props.post.data)}
+                {this.renderMainTag2(this.props.post.data)}
+                {this.renderMainCategory(this.props.post.data)}
+                </ul>
+              </div>
+            </div>
+           
+  
+          </div>
+        </div>
+      </section> 
+      </div>
+       
+        </div>
+    )
+)
+    }
+}
+
+export default withRouter(Post)

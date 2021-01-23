@@ -3,8 +3,6 @@ import moment from "moment";
 import dynamic from 'next/dynamic'
 import InstagramEmbed from 'react-instagram-embed'
 import { Tweet } from 'react-twitter-widgets'
-const PopularPost = dynamic(() => import('../popularpost2'))
-const RecentPost = dynamic(() => import('../recent'))
 import Head from 'next/head'
 import Header from '../../../../assets/Header'
 import Footer from '../../../../assets/Footer'
@@ -187,7 +185,7 @@ class AddEdit extends React.PureComponent {
         <br/>
         </>
         );
-      }
+        }
     }
 
 
@@ -208,7 +206,7 @@ class AddEdit extends React.PureComponent {
      
       one,
      
-    } = this.props;
+    } = this.props.detail;
     
     const str = one.description 
     //const str = "Hello world, welcome to the universe. This is an amazing place. To be in."
@@ -450,7 +448,7 @@ class AddEdit extends React.PureComponent {
                   </div>
                 </form>
               </div>
-            <RecentPost/>
+       
               
              
   
@@ -462,7 +460,11 @@ class AddEdit extends React.PureComponent {
         </div>
       </section> 
       </div>
-  <PopularPost/> 
+
+
+
+
+
 <Footer/>
 <br/><br/><Footer2/>
     </>

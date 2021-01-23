@@ -13,11 +13,7 @@ export const makeSelectOne = () =>
     selectDomain,
     state => state.one,
   );
-export const makeSelectCategory = () =>
-  createSelector(
-    selectDomain,
-    state => state.category,
-  );
+
 export const makeSelectLoading = () =>
   createSelector(
     selectDomain,
@@ -30,8 +26,3 @@ export const makeSelectErrors = () =>
     state => state.errors,
   );
 
-export const makeSelectUser = () =>
-  createSelector(
-    selectDomain,
-    state => state.user,
-  );

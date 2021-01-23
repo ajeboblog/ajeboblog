@@ -17,6 +17,19 @@ import * as actions from './actions';
 
 
 
+function* loadOne(action) {
+  const token = yield select(makeSelectToken());
+  yield call(
+    Api.get(
+      `blog/musicbyid/${action.payload}`,
+      actions.loadOneSuccess,
+      actions.loadOneFailure,
+      token,
+    ),
+  );
+}
+
+
 function* redirectOnSuccess() {
   yield take(types.ADD_EDIT_SUCCESS);
   yield put(push('/admin'));
@@ -24,9 +37,9 @@ function* redirectOnSuccess() {
 
 export const validate = data => {
   const errors = {};
-  if (!data.artist) errors.artist = 'Artist field is empty';
-  if (!data.song) errors.song = 'Song field is empty';
-  if (!data.artwork) errors.artwork = 'Artwork field is empty';
+  if (!data.artist) errors.artist = 'Artist is required!!';
+  if (!data.artwork) errors.artwork = 'Artwork is required!!';
+  if (!data.category) errors.category = 'Category is required!!';
   return { errors, isValid: !Object.keys(errors).length };
 };
 
@@ -38,7 +51,7 @@ function* addEdit() {
   if (errors.isValid) {
     yield fork(
       Api.post(
-        'blog/',
+        'blog/music/edit',
       actions.addEditSuccess,
       actions.addEditFailure,
       data,
@@ -55,7 +68,7 @@ function* addEdit() {
 
 function* addEditSuccessFunc(action) {
   const snackbarData = {
-    message: 'Song Added Successfully',
+    message: 'Music Edited Successfully',
     options: {
       variant: 'success',
     },
@@ -74,6 +87,7 @@ function* addEditFailureFunc(action) {
   yield put(enqueueSnackbar(defaultError));
 }
 
+
 function* setErrorFunc() {
   const snackbarData = {
     message: 'Please fill all required fields!!',
@@ -85,6 +99,7 @@ function* setErrorFunc() {
 }
 
 export default function* defaultSaga() {
+  yield takeLatest(types.LOAD_ONE_REQUEST, loadOne);
   yield takeLatest(types.ADD_EDIT_REQUEST, addEdit);
   yield takeLatest(types.ADD_EDIT_FAILURE, addEditFailureFunc);
   yield takeLatest(types.ADD_EDIT_SUCCESS, addEditSuccessFunc);

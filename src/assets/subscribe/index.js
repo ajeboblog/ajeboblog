@@ -44,25 +44,7 @@ class Subscribe extends Component {
         const hasError = Boolean(errors);
     return (
         <div>
-           <div className="site-section bg-lightx">
-      <div className="container">
-        <div className="row justify-content-center text-center">
-          <div className="col-md-5">
-            <div className="subscribe-1 ">
-              <h2>Subscribe to our newsletter</h2>
-              <p className="mb-5">Subscribe to our newsletter and get notification about new updates, information news, etc.</p>
-              <form onSubmit={this.handleSubmit} className="d-flex">
-                <input type="text   " className="form-control"  placeholder="Enter your email address" value={email}
-                                 onChange={this.handleChange('email')}/>
-                                 <div id="component-error-text">{errors}</div>
-                <input type="submit" className="btn btn-primary" value="Subscribe"/>
-                
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> 
+           
         </div>
     )
 }

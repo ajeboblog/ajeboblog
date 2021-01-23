@@ -29,7 +29,7 @@ const ArtWork = props => {
   return (
 <>
 <div className="login100-form-special1 p-b-10">
-    ArtWork*
+    Artwork*
     </div>
     <div className="wrap-input100 validate-input m-b-20" data-validate="Enter title">
 					<input
@@ -38,7 +38,7 @@ const ArtWork = props => {
         value={( one && one.artwork) || ''}
         className="input100"
         type="text"
-        autoFocus  placeholder="Enter ArtWork Link"
+        autoFocus  placeholder="Enter Artwork Link"
       />
 					<span className="focus-input100"></span>
 			 {error && <div id="component-error-text">{error}</div>}

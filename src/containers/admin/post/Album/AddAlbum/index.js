@@ -27,7 +27,8 @@ import Hero from './components/Hero';
 import Year from './components/Year';
 import Download from './components/Download';
 import Published from './components/Published'
-import TrackList from './components/TrackList'
+import List from './components/Cats'
+import Track from './components/Track' 
 
 import * as mapDispatchToProps from './actions';
 
@@ -42,12 +43,12 @@ class AddEdit extends React.PureComponent {
 
 
 
-  componentDidMount() {
+ componentDidMount() {
 		this.props.clearOne();
 		this.props.clearErrors();
 	  }
 
-    
+   
 
   handleSave = e => {
     e.preventDefault();
@@ -85,12 +86,14 @@ class AddEdit extends React.PureComponent {
         <Year/>
         <Artwork/>
         <Category/>
-        <TrackList/>
         <Download/>
         <Hero/>
         <International/>
         <Published/>
-
+        <br/><br/>
+        <List/>
+        <br/><br/>
+        <Track/>
         <br/>
 
 				<div className="container-login100-form-btn">

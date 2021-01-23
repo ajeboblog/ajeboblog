@@ -16,6 +16,11 @@ export const ADD_EDIT_REQUEST = 'app/BlogManagePage/ADD_EDIT_REQUEST';
 export const ADD_EDIT_SUCCESS = 'app/BlogManagePage/ADD_EDIT_SUCCESS';
 export const ADD_EDIT_FAILURE = 'app/BlogManagePage/ADD_EDIT_FAILURE';
 
+export const DELETE_ONE_REQUEST = 'app/BlogManagePage/DELETE_ONE_REQUEST';
+export const DELETE_ONE_SUCCESS = 'app/BlogManagePage/DELETE_ONE_SUCCESS';
+export const DELETE_ONE_FAILURE = 'app/BlogManagePage/DELETE_ONE_FAILURE';
+
+
 export const CLEAR_ERRORS = 'app/BlogManagePage/CLEAR_ERRORS';
 export const SET_ERROR_VALUE = 'app/BlogManagePage/SET_ERROR_VALUE';
 export const SET_CATEGORY_VALUE = 'app/BlogManagePage/SET_CATEGORY_VALUE';

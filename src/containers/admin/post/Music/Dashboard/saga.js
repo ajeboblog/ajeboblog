@@ -15,7 +15,7 @@ function* loadEntertainmentList(action) {
   const token = yield select(makeSelectToken());
   yield call(
     Api.get(
-      `blog/dashboard?${query}`,
+      `blog/music?${query}`,
       actions.loadEntertainmentListSuccess,
       actions.loadEntertainmentListFailure,
       token,

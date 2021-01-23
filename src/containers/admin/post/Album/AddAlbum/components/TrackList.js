@@ -1,59 +1,70 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import FormControl from '@material-ui/core/FormControl';
-import { createStructuredSelector } from 'reselect';
-import { makeSelectErrors, makeSelectOne } from '../selectors';
-import * as mapDispatchToProps from '../actions';
+import React from 'react'
+import CatInputs from './Cats'
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
 
 
-const TrackList = props => {
-  const { one, setOneValue, error, user } = props;
+class TrackList extends React.Component {
 
-  const slugify = text => {
-    return text
-      .toString()
-      .toLowerCase()
-      .replace(/\s+/g, '-') // Replace spaces with -
-      .replace(/[^\w\-]+/g, '') // Remove all non-word chars
-      .replace(/\-\-+/g, '-') // Replace multiple - with single -
-      .replace(/^-+/, '') // Trim - from start of text
-      .replace(/-+$/, ''); // Trim - from end of text
-  };
-  const handleDropDownChange = name => e => {
-    e.persist();
-    setOneValue({ key: name, value: e.target.value });
+  state = {
+    cats: [{ name: "", duration: "", artist: "", artwork: "", this_week: "", last_week: "" }]
+    
   }
-  
-  
 
-  const hasError = Boolean(error);
+ /* handleChange = (e) => {
+    if (["name", "duration"].includes(e.target.className) )
+     {
+      let cats = [...this.state.cats]
+      cats[e.target.dataset.id][e.target.className] = e.target.value
+      this.setState({ cats }, () => console.log(this.state.cats))
+    } else {
+      this.setState({ [e.target.name]: e.target.value})
+    }
+  }
+*/
 
+addCat = (e) => {
+  e.preventDefault() 
+  this.setState((prevState) => ({
+    cats: [...prevState.cats, {name: "", duration: "", 
+    artist: "", artwork: "", this_week: "", last_week: ""}],
+  }));
+}
+
+
+
+
+
+  render(){
+
+    let { cats } = this.state
+    
 
   return (
-<>
+    <>
+
 <div className="login100-form-special1 p-b-10">
-          Tracks*
+     List*
     </div>
-    
-</>
-  );
-};
+     
 
-TrackList.propTypes = {
-  
-  setOneValue: PropTypes.func.isRequired,
-  errors: PropTypes.string,
-  one: PropTypes.string
-};
+      <Fab
+            color="dark"
+            aria-label="Add"
+            round="true"
+            onClick={this.addCat}
+            elevation={0}
+             >
+            <AddIcon />
+             </Fab>
+          <br/><br/>
+      <CatInputs cats={cats}/>
+      <br/>
 
-const mapStateToProps = createStructuredSelector({
-  one: makeSelectOne(),
-  errors: makeSelectErrors(),
+    </>
+  )
+}
+}
 
-});
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(TrackList);
+export default TrackList;

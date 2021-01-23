@@ -48,8 +48,8 @@ const CategoryInput = props => {
               <option value="entertainment" >
                 Entertainment
               </option>
-              <option value="health">
-                Health
+              <option value="music">
+               Music
               </option>
               <option value="lifestyle" >
                 Lifestyle

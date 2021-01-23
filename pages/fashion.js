@@ -1,11 +1,10 @@
 import React from 'react'
-import Album from '../../src/containers/category/blog/Music/pages/album'
-
+import Sports from '../src/containers/category/blog/Sports'
 
 export default function Index() {
     return (
         <div>
-            <Album/>
+            <Sports/>
         </div>
     )
 }

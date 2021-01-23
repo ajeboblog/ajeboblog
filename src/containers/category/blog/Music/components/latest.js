@@ -33,20 +33,9 @@ export default class newmusic extends Component {
 }
 
   render() {
-    const styling1 = {
-      backgroundImage: `url('images/16.jpg')`,
-    }
+    
+    const music = this.props.music
 
-    const styling2 = {
-      backgroundImage: `url('images/17.jpg')`,
-    }
-    const styling4 = {
-      backgroundImage: `url('images/14.jpg')`,
-    }
-
-    const styling3 = {
-      backgroundImage: `url('images/27.jpg')`,
-    }
 
     const column = this.props.column ? this.props.column : 4;
     const gap = this.props.gap ? this.props.gap : 10;
@@ -63,7 +52,10 @@ export default class newmusic extends Component {
      
       <div class="container">
       <div class="flex-grow-1">
-                  
+    
+                        <h5>Fashion</h5>
+                        <hr/>
+                 
                     <p>New Release</p>
                 </div>
                 
@@ -78,54 +70,35 @@ export default class newmusic extends Component {
                             responsive={this.state.responsive}
                              >
 
-<div class="item">
-                  <div class="single-hero-post" style={styling1}>
+{this.props.music
+                 ? this.props.music.slice(0, 9).map(blog => {
+                   return(
+
+              <div class="item">
+                  <div class="single-hero-post">
                   
                   <div class="slide-img bg-img"></div>
                  
                   <div class="hero-slides-content">
-                <p>category1</p>
-                      <a href="#" class="post-title">
-                          <h4>title1</h4>
+                   <p>{blog.category}</p>
+                      <a href={`/${blog.slug_url}`} class="post-title">
+                          <h4>{blog.title}</h4>
                       </a>
                   </div>
               </div>
                   </div>
+ );
+}
+
+
+): 
+<div>
+Loading...
+</div>
+}
 
 
 
-                  
-                  <div class="item">
-                  <div class="single-hero-post" style={styling3}>
-                  
-                  <div class="slide-img bg-img"></div>
-                 
-                  <div class="hero-slides-content">
-                <p>category2</p>
-                      <a href="#" class="post-title">
-                          <h4>title2</h4>
-                      </a>
-                  </div>
-              </div>
-                  </div>
-
-
-                  
-                  <div class="item">
-                  <div class="single-hero-post"  style={styling2}>
-                  
-                  <div class="slide-img bg-img"></div>
-                 
-                  <div class="hero-slides-content">
-                <p>category3</p>
-                      <a href="#" class="post-title">
-                          <h4>title3</h4>
-                      </a>
-                  </div>
-              </div>
-                  </div>
-
-             
                  </OwlCarousel>
        </div>
       </>

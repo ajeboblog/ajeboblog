@@ -56,6 +56,9 @@ const Header = ({ token, logoutRequest, ...rest }) => {
            <li class="affan-dropdown-menu"><a href="/lifestyle">
            Lifestyle</a></li>
 
+           <li class="affan-dropdown-menu"><a href="/fashion">
+           Fashion</a></li>
+
 
 
         <li class="affan-dropdown-menu"><a href="/music">
@@ -72,13 +75,6 @@ const Header = ({ token, logoutRequest, ...rest }) => {
            <li><a href="/admin/music/add">
            Create Music</a></li>
 
-           <li><a href="/admin/album/add">
-           Create Album</a></li>
-
-           <li><a href="/admin/chart/add">
-           Create Chart</a></li>
-
-
 
         <li><a href="/admin">
             Admin Blog</a></li>
@@ -87,12 +83,7 @@ const Header = ({ token, logoutRequest, ...rest }) => {
             <li><a href="/admin/music">
             Admin Music</a></li>
 
-            <li><a href="/admin/album">
-            Admin Album</a></li>
-
-            <li><a href="/admin/chart">
-            Admin Chart</a></li>
-
+           
         <li class="affan-dropdown-menu"><a href="/profile">
            Profile</a></li>
 
@@ -164,6 +155,8 @@ const Header = ({ token, logoutRequest, ...rest }) => {
            <li class="affan-dropdown-menu"><a href="/comming-soon">
            Lifestyle</a></li>
 
+           <li class="affan-dropdown-menu"><a href="/fashion">
+           Fashion</a></li>
 
 
            <li class="affan-dropdown-menu"><a href="/music">

@@ -22,8 +22,6 @@ export const clearQuery = payload => ({
   type: types.CLEAR_QUERY,
   payload,
 });
-
-
 export const loadOneRequest = payload => ({
   type: types.LOAD_ONE_REQUEST,
   payload,
@@ -49,6 +47,7 @@ export const addEditFailure = payload => ({
   type: types.ADD_EDIT_FAILURE,
   payload,
 });
+
 
 export const clearErrors = () => ({
   type: types.CLEAR_ERRORS,

@@ -27,12 +27,16 @@ const Dashboard = props => {
 
       {currentBlogs.map(each => {
         const {
-
-            
-        _id,
-        artwork
-
-
+          thumbnail,
+          _id,
+          title,
+          category,
+          name,
+          published_on,
+          slug_url,
+          description,
+          added_at,
+          avatar,
         } = each;
 
         return (
@@ -40,7 +44,7 @@ const Dashboard = props => {
         
           <div className="col-lg-4 mb-4">
                       <div className="entry2">
-                      <a href={`/${_id}`}>
+                      <a href={`/${description}`}>
                       <img
                         src={artwork}
                         className="img-fluid rounded"
@@ -49,7 +53,22 @@ const Dashboard = props => {
 
                       </a>
                       
-                      
+                        <div className="excerpt">
+                        <span className="post-category text-white bg-success mb-3">{category}</span>
+                        
+                        <h2>
+                        <a href={`/${description}`}>
+                          {artist}
+                          </a>
+                         
+                         </h2>
+                        <div className="post-meta align-items-center text-left clearfix">
+                          <span className="d-inline-block mt-1">By {artist}</span><span>-</span>
+                          <span> {moment(published_on).format('MMM Do YYYY')}</span>
+                        </div>
+                        
+                        <p>{description}</p>
+                        <br/>
                           <div className="row">
                           <div className="col-6">
                           <a href={`/admin/edit/${_id}`}> 
@@ -65,7 +84,7 @@ const Dashboard = props => {
                           </div>
                         </div>
                       </div>
-                    
+                    </div>
           </>
         );
       })}
