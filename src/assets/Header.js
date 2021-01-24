@@ -159,10 +159,7 @@ const Header = ({ token, logoutRequest, ...rest }) => {
            Fashion</a></li>
 
 
-           <li class="affan-dropdown-menu"><a href="/music">
-            Music</a>
-          
-           </li>
+        
 
         <li><a href="/comming-soon">
             AjeboTV</a></li>

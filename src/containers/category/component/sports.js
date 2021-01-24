@@ -29,7 +29,7 @@ render(){
           <div class="card shadow-sm blog-list-card">
               <div class="d-flex align-items-center">
                 <div class="card-blog-img" style={{backgroundImage: `url(${blog.artwork})`}}><span class="badge bg-warning text-dark position-absolute card-badge">{blog.category}</span></div>
-                <div class="card-blog-content"><span class="badge mb-2 d-inline-block">{moment(blog.published_on).format('MMM Do YYYY')}</span><h3><a class="text-dark" href={blog.description}>{blog.title.substring(0, 70) + '...'}</a></h3></div>
+                <div class="card-blog-content"><span class="badge mb-2 d-inline-block">{moment(blog.published_on).format('MMM Do YYYY')}</span><h3><a class="text-dark" href={`/song?id=${blog._id}`}>{blog.description}</a></h3></div>
               </div>
             </div>
         </div>  <br/><br/></>

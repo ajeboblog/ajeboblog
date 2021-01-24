@@ -15,7 +15,7 @@ class Index extends Component {
   static async getInitialProps(context) {
    let { query } = context
    const post1 =  await axios.get(`http://localhost:5000/api/blog/editor`)
-   const post2 =  await axios.get(`http://localhost:5000/api/blog/music`)
+   //const post2 =  await axios.get(`http://localhost:5000/api/blog/music`)
    const post5 =  await axios.get(`http://localhost:5000/api/blog/fashion`)
    const post3 =  await axios.get(`http://localhost:5000/api/blog/entertainment`)
    const post4 =  await axios.get(`http://localhost:5000/api/blog/lifestyle`)
@@ -25,14 +25,14 @@ class Index extends Component {
      music: post5.data,
      entertainment: post3.data,
      lifestyle: post4.data,
-     sports: post2.data
+     //sports: post2.data
    }
 
 
 }
 
 render(){
-console.log( this.props.music.data )
+
 		return (
 	
        <>
@@ -76,7 +76,7 @@ console.log( this.props.music.data )
                 <div className="col-12  main-content">
                    <Entertainment entertainment={this.props.entertainment.data}/>
                    <Lifestyle lifestyle={this.props.lifestyle.data}/>
-                   <Sports sports={this.props.sports.data}/>
+                   
                    <br/>
  
                   

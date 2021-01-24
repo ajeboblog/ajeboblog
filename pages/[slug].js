@@ -215,7 +215,7 @@ renderBody10(tenthline) {
 
   render() {
     
-    console.log(this.props.post);
+    
     const str = this.props.post.data.description 
    
     var pFirst = str.indexOf(".");

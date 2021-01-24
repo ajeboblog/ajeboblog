@@ -27,16 +27,13 @@ const Dashboard = props => {
 
       {currentBlogs.map(each => {
         const {
-          thumbnail,
+         artist,
+         artwork,
+         description,
           _id,
-          title,
-          category,
-          name,
-          published_on,
-          slug_url,
-          description,
-          added_at,
-          avatar,
+         category, 
+         published_on,
+
         } = each;
 
         return (
@@ -46,7 +43,7 @@ const Dashboard = props => {
                       <div className="entry2">
                       <a href={`/${description}`}>
                       <img
-                        src={artwork}
+                        src=''
                         className="img-fluid rounded"
                         alt="ajeboblog"
                       />
@@ -71,13 +68,13 @@ const Dashboard = props => {
                         <br/>
                           <div className="row">
                           <div className="col-6">
-                          <a href={`/admin/edit/${_id}`}> 
+                          <a href={`/admin/music/edit/${_id}`}> 
                           <span className="btn btn-dark">Edit</span>
                           </a>
                           </div>
 
                           <div className="col-6">
-                          <a href={`/admin/delete/${_id}`}> 
+                          <a href={`/admin/music/delete/${_id}`}> 
                           <span className="btn btn-dark">Delete</span>
                           </a>
                           </div>
