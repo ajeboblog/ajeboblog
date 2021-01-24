@@ -75,7 +75,7 @@ export default class newmusic extends Component {
                    return(
 
               <div class="item">
-                  <div class="single-hero-post">
+                  <div class="single-hero-post" style={{ backgroundImage: `url(${blog.thumbnail})`}}>
                   
                   <div class="slide-img bg-img"></div>
                  

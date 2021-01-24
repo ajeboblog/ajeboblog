@@ -15,8 +15,8 @@ import Recent from '../src/containers/category/component/recent'
 class Post extends Component {
   static async getInitialProps(context) {
    let { query } = context
-   const post =  await axios.get(`http://localhost:5000/api/blog/blog/${query.slug  }`)
-   const post1 =  await axios.get(`http://localhost:5000/api/blog/latest`)
+   const post =  await axios.get(`https://joydimba.herokuapp.com/api/blog/blog/${query.slug  }`)
+   const post1 =  await axios.get(`https://joydimba.herokuapp.com/api/blog/latest`)
 
 
    return {

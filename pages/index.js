@@ -14,11 +14,11 @@ import Music from '../src/containers/category/blog/Music/components/latest'
 class Index extends Component {
   static async getInitialProps(context) {
    let { query } = context
-   const post1 =  await axios.get(`http://localhost:5000/api/blog/editor`)
-   //const post2 =  await axios.get(`http://localhost:5000/api/blog/music`)
-   const post5 =  await axios.get(`http://localhost:5000/api/blog/fashion`)
-   const post3 =  await axios.get(`http://localhost:5000/api/blog/entertainment`)
-   const post4 =  await axios.get(`http://localhost:5000/api/blog/lifestyle`)
+   const post1 =  await axios.get(`https://joydimba.herokuapp.com/api/blog/editor`)
+   //const post2 =  await axios.get(`https://joydimba.herokuapp.com/api/blog/music`)
+   const post5 =  await axios.get(`https://joydimba.herokuapp.com/api/blog/fashion`)
+   const post3 =  await axios.get(`https://joydimba.herokuapp.com/api/blog/entertainment`)
+   const post4 =  await axios.get(`https://joydimba.herokuapp.com/api/blog/lifestyle`)
   
    return {
      post: post1.data,
