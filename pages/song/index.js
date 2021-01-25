@@ -7,7 +7,7 @@ export default class index extends Component {
 
   static async getInitialProps(context) {
     let { query } = context
-    const post =  await axios.get(`http://localhost:5000/api/blog/musicbyid/${query.id  }`)
+    const post =  await axios.get(`https://joydimba.herokuapp.com/api/blog/musicbyid/${query.id  }`)
    
  
  

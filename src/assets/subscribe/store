@@ -11,7 +11,7 @@ import loadable from '@loadable/component'
 class Post extends Component {
   static async getInitialProps(context) {
    let { query } = context
-   const post =  await axios.get(`http://localhost:5000/api/blog/blog/${query.slug  }`)
+   const post =  await axios.get(`https://joydimba.herokuapp.com/api/blog/blog/${query.slug  }`)
   
    return {
      post: post.data
