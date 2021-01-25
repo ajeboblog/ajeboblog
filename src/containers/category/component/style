@@ -497,7 +497,7 @@ img {
   overflow: hidden; }
   @media only screen and (max-width: 767px) {
     .single-hero-post {
-      height: 400px; } }
+      height: 300px; } }
   .single-hero-post::after {
     content: "";
     position: absolute;
