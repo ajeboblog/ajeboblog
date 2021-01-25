@@ -6,12 +6,12 @@ import { createStructuredSelector } from 'reselect';
 import {
   makeSelectToken,
 } from '../Others/App/selectors';
-import Loader from './Loader'
+
 import SignOut from './signout'
 
 const Header = ({ token, logoutRequest, ...rest }) => {
   if (token) return (<>
-<Loader/>
+
 <div class="header-area" id="headerArea">
       <div class="container">
        
@@ -110,7 +110,7 @@ const Header = ({ token, logoutRequest, ...rest }) => {
   delete rest.component; // eslint-disable-line no-param-reassign
   return (
     <>
-    <Loader/>
+    
    <div class="header-area" id="headerArea">
       <div class="container">
        

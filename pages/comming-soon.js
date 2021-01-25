@@ -1,5 +1,4 @@
 import React from 'react'
-import Loader from '../src/assets/Loader'
 import Back from '../src/assets/Back'
 import Subscribe from '../src/assets/subscribe/subscribe2'
 
@@ -14,7 +13,7 @@ export default function Index() {
 
     return (
         <>
-            <Loader/>
+          
             <Back/>
             <Subscribe/>
         
