@@ -17,7 +17,7 @@ import Artist from './components/Artist';
 import Album from './components/Album'
 import Artwork from './components/Artwork'
 import Category from './components/Category'
-import International from './components/Internation';
+import International from './components/International';
 import Hero from './components/Hero';
 import Year from './components/Year';
 import Download from './components/Download';
