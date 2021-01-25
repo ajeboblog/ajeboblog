@@ -31,10 +31,6 @@ const Layout = (props) => (
     <script src="js/default/active.js"></script>
     <script src="js/default/clipboard.js"></script>
     <script src="js/active.js"></script>
-
-    <script src="js/scripts.bundle"></script>
-    <script src="js/vendors.bundle"></script>
-
     </div>
 );
 

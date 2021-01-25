@@ -12,7 +12,7 @@ render(){
       <div class="container">
         <div class="row g-3">
         <div className="col-md-7">
-               <h5>Lifestyle</h5>
+               <h5>Entertainment</h5>
                <hr/>
          </div>
          </div>
