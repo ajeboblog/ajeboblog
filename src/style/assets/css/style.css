@@ -4985,39 +4985,7 @@ div.dataTables_wrapper div.dataTables_paginate {
   background-size: cover;
   border-radius: .5rem 0 0 .5rem; }
 
-  .image-field2 {
-    width:100%;
-  height: auto;
   
-  }
-
-  @media only screen and (min-width: 1200px) {
-    .image-field2 {
-      max-width: 600px;
-    max-height:400px } }
-  
-  @media only screen and (min-width: 992px) {
-    .image-field2 {
-      max-width: 560px;
-    max-height: 400px } }
-  
-  @media only screen and (min-width: 768px)  {
-    .image-field2 {
-      max-width: 520px;
-      max-height: 200px;
-    } }
-  
-  @media only screen and (min-width: 490px)  and (max-width:1200) {
-    .image-field2 {
-      max-width: 420px;
-      height: 400px;
-    } }
-  
-  @media only screen and (min-width: 200px) and (max-width: 480px) {
-    .image-field2 {
-      max-width: 460px;
-      height: 400px; } }
-
 .card-blog-content {
   padding: 1.5rem;
   width: 50%;

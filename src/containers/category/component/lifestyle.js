@@ -45,7 +45,7 @@ render(){
     </div>
     <br/>
     <div className="seemore">
-    <a class="btn btn-primary btn-sm" href="/">See More</a>
+    <a class="btn btn-primary btn-sm" href="/lifestyle">See More</a>
                
          </div>
    </div>

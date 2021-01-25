@@ -78,7 +78,7 @@ renderImage2(one) {
       <img
         src={one.images[1].data_url}
         alt="ajeboblog"
-        className="img-fluid2"
+        className="img-fluid"
       />
       
     );
