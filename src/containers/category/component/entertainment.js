@@ -10,7 +10,7 @@ export class Recent extends React.Component {
         <img
           src={entertainment.thumbnail}
           alt="ajeboblog"
-          className="mr-4"
+         
 
         />
       );
