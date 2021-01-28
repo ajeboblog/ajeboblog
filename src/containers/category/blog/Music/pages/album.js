@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import Header from '../../../../../assets/Header'
-import Footer2 from '../../../../../assets/Footer2'
 import Head from 'next/head'
 
 
@@ -109,7 +108,7 @@ export class Index extends React.Component {
 
 
 </div></div>
-              <Footer2/>
+             
    </>
       );
     }

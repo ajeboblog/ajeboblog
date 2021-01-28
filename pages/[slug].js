@@ -7,9 +7,9 @@ import { Tweet } from 'react-twitter-widgets'
 import moment from "moment";
 import loadable from '@loadable/component'
 import Header from '../src/assets/Header'
-import Footer from '../src/assets/Footer2'
+import Footer from '../src/assets/Footer'
 import Recent from '../src/containers/category/component/recent'
-
+import Headline from '../src/containers/category/component/headline'
 
 
 class Post extends Component {
@@ -17,10 +17,11 @@ class Post extends Component {
    let { query } = context
    const post =  await axios.get(`https://joydimba.herokuapp.com/api/blog/blog/${query.slug  }`)
    const post1 =  await axios.get(`https://joydimba.herokuapp.com/api/blog/latest`)
-
+   const post2 =  await axios.get(`https://joydimba.herokuapp.com/api/blog/editor`)
 
    return {
      post: post.data,
+     posts: post2.data,
      recent: post1.data
    }
 }
@@ -54,12 +55,15 @@ renderInstagram(post){
 }
 renderImage1(one) {
   if (one.images[0]) {
-    return (
+    return (<>
+    
       <img
         src={one.images[0].data_url}
         alt="ajeboblog"
         className="img-fluid"
       />
+      <br/>
+      </>
     );
   }
   else{
@@ -74,13 +78,14 @@ renderImage1(one) {
 
 renderImage2(one) {
   if (one.images[1]) {
-    return (
+    return (<>
+    
       <img
         src={one.images[1].data_url}
         alt="ajeboblog"
         className="img-fluid"
-      />
-      
+      /><br/>
+     </> 
     );
   }
   else{
@@ -97,6 +102,7 @@ renderBody1(firstline) {
   if (firstline !== "none") {
     return (
       <>
+      <br/>
     <p><h7>{firstline}</h7></p>
     <br/>
     </>
@@ -109,6 +115,7 @@ renderBody2(secondline) {
   if (secondline !== "none") {
     return (
       <>
+      <br/>
     <p><h7>{secondline}</h7></p>
     <br/>
     </>
@@ -122,6 +129,7 @@ renderBody3(thirdline) {
   if (thirdline !== "none") {
     return (
       <>
+      <br/>
     <p><h7>{thirdline}</h7></p>
     <br/>
     </>
@@ -485,10 +493,10 @@ renderBody10(tenthline) {
                 {this.renderInstagram(this.props.post.data)}
               </div>
   
-  
+              <br/><br/>
             </div>
   
-            
+            <Recent recent={this.props.recent.data}/>
   
             <div className="col-md-12 col-lg-4 sidebar">
               <div className="sidebar-box search-form-wrap">
@@ -502,12 +510,9 @@ renderBody10(tenthline) {
             
   
               <div className="sidebar-box">
-                <h3 className="heading">Tags</h3>
-                <ul className="tags">
-                
-                </ul>
+               
                 <br/><br/>
-                <Recent recent={this.props.recent.data}/>
+                <Headline headline={this.props.posts.data}/>
               </div>
             </div>
            

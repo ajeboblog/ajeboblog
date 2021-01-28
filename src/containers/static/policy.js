@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../assets/Header'
 import Footer from '../../assets/Footer'
-import Footer2 from '../../assets/Footer2' 
+ 
 
 const policy = () => (
     <div>
@@ -49,8 +49,6 @@ const policy = () => (
         </div>
       </div>
       <Footer/>
-              <br/><br/>
-              <Footer2/>
   </div>
   )
   export default policy

@@ -4,52 +4,59 @@ import moment from 'moment';
 
 export class Recent extends React.Component {
  
+  renderMainImage(lifestyle) {
+    if (lifestyle.thumbnail) {
+      return (
+        <img
+          src={lifestyle.thumbnail}
+          alt="ajeboblog"
+          className="mr-4"
+
+        />
+      );
+    }
+  }
 
 render(){
     return (
       <>
-     <div class="page-content-wrapper py-3">
-      <div class="container">
-        <div class="row g-3">
-        <div className="col-md-7">
-               <h5>Lifestyle</h5>
-               <hr/>
-         </div>
-         </div>
-         <div class="row">
-        {this.props.lifestyle
-                 ? this.props.lifestyle.slice(0, 6).map(blog => {
-                   return(
-        <>
+      <div className="container">
+     <div className="sidebar-box">
+        <h3 className="heading">Lifestyle</h3>
+        <div className="post-entry-sidebar">
+          <ul>
+          {this.props.lifestyle
+                  ? this.props.lifestyle.slice(0, 4).map(lifestyle => {
+                      return (
+
+            <li key ={lifestyle.slug_url} >
+              
+
+              <a href={`/${lifestyle.slug_url}`}>
+              <div className="row">
+
+              <div className="col-3">
+               {this.renderMainImage(lifestyle)}
+               </div>
+               <div className="col-9">
+                <div className="text">
+                      <h4>{lifestyle.title.substring(0, 70) + '...'}</h4>
+                  <div className="post-meta">
+                    <span className="mr-2">{moment(lifestyle.published_on).format('MMM Do YYYY')}</span>
+                  </div>
+                </div>
+
+                </div></div>
+              </a>
+              
+            </li>
+       );
+      }): <div></div>}
+
+          </ul>
         
-                    <div class="col-12 col-md-6 col-lg-4">
-          <div class="card shadow-sm blog-list-card">
-              <div class="d-flex align-items-center">
-                <div class="card-blog-img" style={{backgroundImage: `url(${blog.thumbnail})`}}><span class="badge bg-warning text-dark position-absolute card-badge">{blog.category}</span></div>
-                <div class="card-blog-content"><span class="badge mb-2 d-inline-block">{moment(blog.published_on).format('MMM Do YYYY')}</span><h3><a class="text-dark" href={blog.slug_url}>{blog.title.substring(0, 50) + '...'}</a></h3></div>
-              </div>
-            </div>
-        </div>  <br/><br/></>
-      );
-    }
-
-
-    ): 
-    <div>
-  Loading...
-    </div>
-    }
-
-
-     
-    </div>
-    <br/>
-    <div className="seemore">
-    <a class="btn btn-primary btn-sm" href="/lifestyle">See More</a>
-               
-         </div>
-   </div>
-  </div>
+        </div>
+        </div></div>
         </>
      
       );

@@ -6,7 +6,7 @@ import { Tweet } from 'react-twitter-widgets'
 import Head from 'next/head'
 import Header from '../../../../assets/Header'
 import Footer from '../../../../assets/Footer'
-import Footer2 from '../../../../assets/Footer2'
+
 
 
 class AddEdit extends React.PureComponent {
@@ -466,7 +466,7 @@ class AddEdit extends React.PureComponent {
 
 
 <Footer/>
-<br/><br/><Footer2/>
+
     </>
     );
   }

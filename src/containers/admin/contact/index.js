@@ -18,7 +18,7 @@ import {
 import * as mapDispatchToProps from './actions';
 import Header from '../../../assets/Header'
 import Footer from '../../../assets/Footer'
-import Footer2 from '../../../assets/Footer2'
+
 
 
 class ContactUs extends React.Component {
@@ -135,8 +135,7 @@ class ContactUs extends React.Component {
       </div>
     </div>
     <Footer/>
-              <br/><br/>
-              <Footer2/>
+             
       </div>
     )
 }

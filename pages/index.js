@@ -3,12 +3,28 @@ import  { withRouter } from 'next/router'
 import Head from 'next/head'
 import axios from 'axios'
 import Home from "../src/containers/category/blog/Home"
-import Entertainment from '../src/containers/category/component/entertainment'
-import Lifestyle from '../src/containers/category/component/lifestyle'
-import Sports from '../src/containers/category/component/sports'
+import loadable from '@loadable/component'
+const Lifestyle = loadable(() => import('../src/containers/category/component/lifestyle'), { 
+  render: ({ Component, loading, ownProps }) => {
+    if (loading) return <div>...</div>
+    return <Component {...ownProps} />
+  },
+})
+const Entertainment = loadable(() => import('../src/containers/category/component/entertainment'), {
+  render: ({ Component, loading, ownProps }) => {
+    if(loading) return <div>...</div>
+    return <Component {...ownProps} />
+  },
+})
+const Sports = loadable(() => import('../src/containers/category/component/sports'), {
+  render: ({ Component, loading, ownProps }) => {
+    if(loading) return <div>...</div>
+    return <Component {...ownProps} />
+  },
+})
+
 import Header from '../src/assets/Header'
 import Footer from '../src/assets/Footer'
-import Footer2 from '../src/assets/Footer2'
 import Music from '../src/containers/category/blog/Music/components/latest'
 
 class Index extends Component {
@@ -72,8 +88,9 @@ render(){
         data={this.props.post.data}
         />
 
-<div className="row blog-entries element-animate">
-                <div className="col-12  main-content">
+     <div className="row blog-entries element-animate">
+           <div className="col-md-12 col-lg-8 main-content">
+
                    <Entertainment entertainment={this.props.entertainment.data}/>
                    <Lifestyle lifestyle={this.props.lifestyle.data}/>
                    
@@ -88,8 +105,7 @@ render(){
                   </div>
 
                   <Footer/>
-              <br/><br/>
-              <Footer2/>
+              
        </>
     )
 

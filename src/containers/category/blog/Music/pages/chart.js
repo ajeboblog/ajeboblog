@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import Header from '../../../../../assets/Header'
-import Footer2 from '../../../../../assets/Footer2'
+
 
 
 export default class chart extends Component {

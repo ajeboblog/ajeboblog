@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../assets/Header'
 import Footer from '../../assets/Footer'
-import Footer2 from '../../assets/Footer2'
+
 
 function advertisement() {
 
@@ -27,8 +27,6 @@ function advertisement() {
         </div>
       </div>
       <Footer/>
-              <br/><br/>
-              <Footer2/>
       </>
   
   )

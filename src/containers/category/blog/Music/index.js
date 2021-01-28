@@ -9,7 +9,6 @@ import {  makeSelectEntertainmentList,
 import * as mapDispatchToProps from './actions';
 
 import Header from '../../../../assets/Header'
-import Footer2 from '../../../../assets/Footer2'
 import Music from './components/latest'
 import Chart from './components/chart'
 import Album from './components/album'
@@ -95,8 +94,7 @@ export class EntertainmentListList extends React.Component {
               <Chart/>
 
       </div></div>
-              <br/><br/>
-              <Footer2/>
+             
    </>
       );
     }

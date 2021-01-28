@@ -9,7 +9,6 @@ import {  makeSelectEntertainmentList,
 import * as mapDispatchToProps from './actions';
 import RenderBlogs from '../../component/render'
 import Header from '../../../../assets/Header'
-import Footer2 from '../../../../assets/Footer2'
 import Footer from '../../../../assets/Footer'
 import injectSaga from '../../../../utils/injectSaga';
 import injectReducer from '../../../../utils/injectReducer';
@@ -82,7 +81,7 @@ export class EntertainmentListList extends React.Component {
         <div className="container">
             <div className="row mb-5">
                <div className="col-12">
-               <h4>Entertainment Posts</h4> 
+               <h4>Entertainment</h4> 
                </div>
             </div>
             <div className="row">
@@ -99,8 +98,7 @@ export class EntertainmentListList extends React.Component {
            </div>
        </div>
       </div>
-      <Footer/><br/><br/>
-      <Footer2/>
+      <Footer/>
    </>
       );
     }
